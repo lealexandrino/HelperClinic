@@ -1,0 +1,37 @@
+﻿@{Layout = null;}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Helper Clinic | Erro de autenticação</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="shortcut icon" type="image/x-icon" href="~/Content/img/logo.png" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous" async='async' lazyload>
+    <link href="~/Content/plugins/build/css/custom.min.css" rel="stylesheet" async="async" lazyload>
+    <style>
+        a, h1 {
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-12">
+                <div class="col-middle">
+                    <div class="text-center text-center">
+                        <h1 class="error-number" style="font-size:36px;">Erro de autenticação</h1>
+                        <h2>Ocorreu um problema ao validar seu acesso ao sistema</h2>
+                        <br />
+                        <h4>Mensagem do erro: <span style="color:#fff">@ViewBag.Error</span></h4>
+                        <br />
+                        <p><a href="~/Login?Invalid=True">Clique aqui</a> para fazer login</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

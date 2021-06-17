@@ -1,0 +1,13 @@
+#
+# robots.txt
+#
+
+
+User-agent: *
+Crawl-delay: 10
+# Paths (clean URLs)
+Disallow: /agenda/
+Disallow: /consulta/
+Disallow: /painel/
+Disallow: /prontuario/
+Disallow: /relatorio/

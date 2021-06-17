@@ -1,0 +1,54 @@
+﻿@{Layout = null;}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Helper Clinic | Sessão inválida</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="shortcut icon" type="image/x-icon" href="~/Content/img/logo.png" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous" async='async' lazyload>
+    <link href="~/Content/plugins/build/css/custom.min.css" rel="stylesheet" async="async" lazyload>
+    <style>
+        a, h1 {
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 36px !important;
+        }
+
+        h2{
+            font-size: 22px;
+        }
+
+        h3{
+            font-size: 18px;
+        }
+
+        h2, h3 {
+            color: #f3f3f3;
+        }
+    </style>
+</head>
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-12">
+                <div class="col-middle">
+                    <div class="text-center text-center">
+                        <h1 class="error-number">Sessão inválida</h1>
+                        <h2>@ViewBag.Error</h2>
+                        <h3>
+                            Encerre uma sessão ativa e aguarde um minuto.
+                        </h3>
+                        <br />
+                        <p><a href="~/Login?Invalid=true">Clique aqui</a> para fazer login novamente</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

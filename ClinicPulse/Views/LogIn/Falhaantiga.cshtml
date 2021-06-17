@@ -1,0 +1,48 @@
+﻿@model ClinicPulse.Models.ClinicPulseViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <title>Clinic Pulse</title>
+    <link rel="icon" type="image/x-icon" href="~/Content/images/pulse3.jpg">
+    <link href="../../Content/Login.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class='form'>
+        @using (Ajax.BeginForm("LoginUsuario", "Login", new AjaxOptions { HttpMethod = "Post" }, new { id = "formLogin" }))
+        {
+            @Html.AntiForgeryToken()
+    <div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content altura">
+                <div class="modal-body">
+                    <br />
+                    <div class="form-group">
+                        <input type="email" name="LogIn.Email" class="form-control" placeholder="Email" style="border-color:red;">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="LogIn.Senha" class="form-control" placeholder="Password" style="border-color:red;">
+                    </div>
+                    <p style="color:red;">E-mail ou senha inválido</p>
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-lg btn-block botao">Entrar</button>
+                    </div>
+                </div>
+
+                <div class="modal-footer" style="text-align:center;">
+                    Bem vindo ao Clinic Pulse
+                </div>
+            </div>
+        </div>
+    </div>
+        }
+    </div>
+</body>
+</html>

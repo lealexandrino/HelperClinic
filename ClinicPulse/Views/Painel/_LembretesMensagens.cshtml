@@ -1,0 +1,55 @@
+﻿@model ClinicPulse.Models.ClinicPulseViewModel
+    <div class="box box-primary" id="divListaLembretes">
+        <div class="box-header">
+            <i class="ion ion-clipboard"></i>
+            <h3 class="box-title">Envio de mensagens para lembrete eletrônico das consultas do dia seguinte</h3>
+            <div class="callout callout-info" style="margin-bottom: 0!important;">
+                <h4><i class="fa fa-info"></i> Nota:</h4>
+                Para mensagens via WhatsApp deverá estar com o WhatsWeb aberto no navegador
+            </div>
+            @*<br />
+        @if (Model.ListLembretesDiarios[0].Minutos != 0)
+        {
+            <small class="label label-danger"><i class="fa fa-clock-o"></i> @Model.ListLembretesDiarios[0].Minutos Minutos restantes</small>
+        }
+        else if (Model.ListLembretesDiarios[0].Horas != 0)
+        {
+            <small class="label label-warning"><i class="fa fa-clock-o"></i> @Model.ListLembretesDiarios[0].Horas Horas restantes</small>
+        }
+        else if (Model.ListLembretesDiarios[0].Dias != 0)
+        {
+            <small class="label label-success"><i class="fa fa-clock-o"></i> @Model.ListLembretesDiarios[0].Dias Dias restantes</small>
+        }
+        <br />*@
+        </div>
+        <div class="box-body">
+            <ul class="todo-list" style="overflow:hidden!important;">
+                @for (int i = 0; i < Model.ListLembretesDiarios.Count(); i++)
+                {
+                <li>
+                    <span class="handle">
+                        <i class="fa fa-clock-o"></i>
+                    </span>
+                    <span class="text">Mensagem de Lembrete Eletrônico</span>
+                    @if (!string.IsNullOrEmpty(Model.ListLembretesDiarios[i].Celular))
+                    {
+                        <label class="label label-success" style="cursor:pointer;font-size: 13px;" onclick="window.open('https://web.whatsapp.com/send?phone=55@(Model.ListLembretesDiarios[i].Celular.Replace("(","").Replace(")", "").Replace(" ", "").Replace("-", ""))&text=@Model.ListLembretesDiarios[i].Lembrete','_blank')"><i class="fa fa-whatsapp"></i> Enviar WhatsApp</label>
+                        <label class="label label-primary" style="cursor:pointer;font-size: 13px;" onclick="window.open('https://web.whatsapp.com/send?phone=55@(Model.ListLembretesDiarios[i].Celular.Replace("(","").Replace(")", "").Replace(" ", "").Replace("-", ""))&text=@Model.ListLembretesDiarios[i].Lembrete','_blank')"><i class="fa fa-whatsapp"></i> Enviar SMS</label>
+                    }
+                    else
+                    {
+                        <label class="label label-default" style="font-size: 13px;">Paciente sem celular cadastrado</label>   
+                    }
+                    <br />
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <span class="text" id="spnCelular">Celular.: @(string.IsNullOrEmpty(Model.ListLembretesDiarios[i].Celular) ? "Celular não foi preenchido, para realizar o envio da mensagem atualize o cadastro." : Model.ListLembretesDiarios[i].Celular)</span>
+                            <span class="text">Mensagem a ser enviada.: @Model.ListLembretesDiarios[i].Lembrete</span>
+                        </div>
+                    </div>
+                </li>
+                }
+            </ul>
+        </div>
+    </div>
+<script src="~/js/painellembretesoriginal.js"></script>

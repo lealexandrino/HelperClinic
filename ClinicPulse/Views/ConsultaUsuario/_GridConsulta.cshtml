@@ -1,0 +1,19 @@
+﻿@model ClinicPulse.Models.ClinicPulseViewModel
+@{
+    var webGrid = new WebGrid(canPage: true, defaultSort: "ID", rowsPerPage: 10, ajaxUpdateContainerId: "gridConsulta");
+}
+@{
+    webGrid.Bind(Model.ListUsuarios, autoSortAndPage: true);
+
+    int index = 0;
+    WebGridColumn[] colunas = new WebGridColumn[3];
+
+    colunas[index++] = webGrid.Column(columnName: "Nome", header: "Nome", style: "centerColumns", format:@<a href="#" onclick="editarUsuario(@(item.Id))" class="btngrid">@(item.Nome)</a>);
+    colunas[index++] = webGrid.Column(columnName: "Email", header: "E-mail", style: "centerColumns");
+    colunas[index++] = webGrid.Column(columnName: "Perfil", header: "Tipo", style: "centerColumns");
+
+    @webGrid.GetHtml(
+    htmlAttributes: new { id = "gridConsulta" },
+    tableStyle: "table table-bordered",
+    columns: webGrid.Columns(colunas));
+}

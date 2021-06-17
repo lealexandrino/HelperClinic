@@ -1,0 +1,80 @@
+﻿@model ClinicPulse.Models.ClinicPulseViewModel
+    <div class="box box-primary" id="divListaLembretes">
+        <div class="box-header">
+            <i class="ion ion-clipboard"></i>
+            <h3 class="box-title">Lembretes diversos</h3>
+            <div class="box-tools pull-right">
+                <ul class="pagination pagination-sm inline">
+                    @for (int i = 1; i <= Model.Lembretes.QuantidadePaginas; i++)
+                    {
+                        <li id="@i-lbl"><a href="#" onclick="atualizarDefinicao(@i)">@i</a></li>
+                    }
+                </ul>
+            </div>
+        </div>
+        <div class="box-body">
+            <ul class="todo-list">
+                @for (int i = 0; i < Model.ListLembretes.Count(); i++)
+                {
+                    <li>
+                        <span class="handle">
+                            <i class="fa fa-ellipsis-v"></i>
+                            <i class="fa fa-ellipsis-v"></i>
+                        </span>
+                        <span class="text">@Model.ListLembretes[i].Lembrete</span>
+                        @if (Model.ListLembretes[i].Minutos != 0)
+                        {
+                            <small class="label label-danger"><i class="fa fa-clock-o"></i> @Model.ListLembretes[i].Minutos Minutos</small>
+                        }
+                        else if (Model.ListLembretes[i].Horas != 0)
+                        {
+                            <small class="label label-warning"><i class="fa fa-clock-o"></i> @Model.ListLembretes[i].Horas Horas</small>
+                        }
+                        else if (Model.ListLembretes[i].Dias != 0)
+                        {
+                            <small class="label label-success"><i class="fa fa-clock-o"></i> @Model.ListLembretes[i].Dias Dias</small>
+                        }
+
+                        <div class="tools">
+                            <i class="fa fa-edit" style="display:none;" onclick="editar(@Model.ListLembretes[i].id)"></i>
+                            <i class="fa fa-trash-o" onclick="deletar(@Model.ListLembretes[i].id)"></i>
+                        </div>
+                    </li>
+                }
+            </ul>
+
+            <div class="box-footer clearfix no-border">
+                <button class="btn btn-default pull-right" id="btnTelaAdicionar"><i class="fa fa-plus"></i> Adicionar Lembrete</button>
+            </div>
+        </div>
+    </div>
+    <div class="box box-warning" id="divAdicionarLembretes" hidden="hidden">
+        <div class="box box-warning">
+            <div class="box-header">
+                <h3 class="box-title">Adicionar Lembrete</h3>
+            </div>
+            <div class="box-body">
+                <form role="form">
+                    <div class="form-group">
+                        <label>Lembrete</label>
+                        <textarea id="txtLembrete" class="form-control" rows="3" placeholder="Escreva o lembrete ..."></textarea>
+                    </div>
+                    <div class="form-group col-lg-6" style="margin-left:-15px;">
+                        <label>Data e Horario:</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                            <input id="txtDataHorario" type="text" class="form-control">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <div class="box-footer clearfix no-border">
+            <button class="btn btn-default pull-left" id="btnAdicionarLembrete"><i class="fa fa-plus"></i> Adicionar Lembrete</button>
+            <button class="btn btn-default pull-left" style="margin-left:20px" id="btnVoltar"><i class="fa fa-close"></i> Voltar</button>
+        </div>
+    </div>
+<script src="~/js/painellembretesoriginal.js"></script>

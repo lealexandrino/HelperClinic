@@ -1,0 +1,54 @@
+﻿@model ClinicPulse.Models.ClinicPulseViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper" style="min-height: 946px;">
+
+    <section class="content-header">
+        <h1>
+            Relatório
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="/Painel"><i class="fa fa-dashboard"></i> Painel</a></li>
+            <li class="active">Relatório</li>
+        </ol>
+    </section>
+
+    @using (Ajax.BeginForm("GerarRelatorio", "Relatorio", new AjaxOptions { HttpMethod = "Post" }, new { id = "myForm" }))
+    {
+        @Html.AntiForgeryToken()
+        <section class="content">
+            <div id="divGeral">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box box-info">
+                            <div class="box-header">
+                                <h3 class="box-title">Relatório</h3>
+                            </div>
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        @Html.LabelFor(x => x.Relatorio.DataInicial)
+                                        @Html.TextBoxFor(x => x.Relatorio.DataInicials, new { @class = "form-control", @placeholder = "31/03/1988", @id = "txtRelatorioInicial", @required = "required" })
+                                    </div>
+                                    <div class="col-md-6">
+                                        @Html.LabelFor(x => x.Relatorio.DataFim)
+                                        @Html.TextBoxFor(x => x.Relatorio.DataFims, new { @class = "form-control", @placeholder = "31/03/2005", @id = "txtRelatorioFinal", @required = "required" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <input id="btnSalvarGeral" class="btn btn-block btn-success" value="Puxar Relatório" type="submit" />
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+</div>
+<script src="~/js/relatorioindexcript.js"></script>

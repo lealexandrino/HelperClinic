@@ -1,0 +1,136 @@
+﻿@model ClinicPulse.Models.ClinicPulseViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Helper Clinic | Log in</title>
+    <link rel="icon" type="image/x-icon" href="~/Content/images/helpermini.png">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/plugins/alertfy/alertify.core.css" rel="stylesheet" />
+    <link href="~/Content/plugins/alertfy/alertify.default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/plugins/iCheck/square/blue.css">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="~/Content/plugins/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition login-page">
+    <div class="login-box">
+        <div class="login-logo">
+            <img style="width:200px;" src="~/Content/images/helper.png" /><br />
+            <i style="color:#0d3d5d;">Clinicas e Consultórios</i>
+        </div>
+        <!-- /.login-logo -->
+        <div class="login-box-body">
+            <p class="login-box-msg">Acesse para iniciar sua sessão</p>
+            <div class='form'>
+                @using (Ajax.BeginForm("LoginUsuario", "Login", new AjaxOptions { HttpMethod = "Post" }, new { id = "formLogin" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-group has-feedback">
+                        <input type="email" name="LogIn.Email" class="form-control" placeholder="Email">
+                        <span class="fa fa-envelope form-control-feedback"></span>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <input type="password" name="LogIn.Senha" class="form-control" placeholder="Password">
+                        <span class="fa fa-lock form-control-feedback"></span>
+                    </div>
+                    <p style="color:red;">E-mail ou senha inválido</p>
+                    <div class="row">
+                        <div class="col-xs-8">
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-xs-4">
+                            <button type="submit" class="btn btn-primary btn-block btn-flat">Entrar</button>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                }
+            </div>
+            <a href="#">Esqueci minha senha</a><br>
+            <a href="/CadastreGratis" class="text-center">Cadastre-se Gratuitamente</a>
+
+        </div>
+        <!-- /.login-box-body -->
+    </div>
+    <!-- /.login-box -->
+    <!-- jQuery 3 -->
+    <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- iCheck -->
+    <script src="../../plugins/iCheck/icheck.min.js"></script>
+    <script>
+        $(function () {
+            $('input').iCheck({
+                checkboxClass: 'icheckbox_square-blue',
+                radioClass: 'iradio_square-blue',
+                increaseArea: '20%' /* optional */
+            });
+        });
+    </script>
+
+
+</body>
+</html>
+
+
+@*<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+        <title>Clinic Pulse</title>
+        <link rel="icon" type="image/x-icon" href="~/Content/images/pulse3.jpg">
+        <link href="../../Content/Login.css" rel="stylesheet" type="text/css" />
+        <link href="~/Content/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class='form'>
+            @using (Ajax.BeginForm("LoginUsuario", "Login", new AjaxOptions { HttpMethod = "Post" }, new { id = "formLogin" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content altura">
+                            <div class="modal-body">
+                                <br />
+                                    <div class="form-group">
+                                        <input type="email" name="LogIn.Email" class="form-control" placeholder="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" name="LogIn.Senha" class="form-control" placeholder="Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btn btn-primary btn-lg btn-block botao">Entrar</button>
+                                    </div>
+                            </div>
+
+                            <div class="modal-footer" style="text-align:center;">
+                                Bem vindo ao Clinic Pulse
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-63289707-1', 'auto');
+            ga('send', 'pageview');
+
+        </script>
+    </body>
+    </html>*@

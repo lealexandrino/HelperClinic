@@ -1,0 +1,1011 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9D10F591-20F6-4FFB-A333-2D8FED82F86E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClinicPulse</RootNamespace>
+    <AssemblyName>ClinicPulse</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>44376</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.1\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.1.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.1.0.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.2.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.2.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.2.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.2.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.2.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\LoginExceptionAttribute.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AgendaController.cs" />
+    <Compile Include="Controllers\Attributes\AuthenticationAttribute.cs" />
+    <Compile Include="Controllers\Attributes\DeleteFileAttribute.cs" />
+    <Compile Include="Controllers\Attributes\ValidateJsonAntiForgeryTokenAttribute.cs" />
+    <Compile Include="Controllers\BaseController\HelperClinicBaseController.cs" />
+    <Compile Include="Controllers\CadastreGratisController.cs" />
+    <Compile Include="Controllers\CadastroController.cs" />
+    <Compile Include="Controllers\CadastroUsuarioController.cs" />
+    <Compile Include="Controllers\ConfiguracaoController.cs" />
+    <Compile Include="Controllers\ConsultaController.cs" />
+    <Compile Include="Controllers\ConsultaUsuarioController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LogInController.cs" />
+    <Compile Include="Controllers\LogoutController.cs" />
+    <Compile Include="Controllers\PainelController.cs" />
+    <Compile Include="Controllers\ProntuarioController.cs" />
+    <Compile Include="Controllers\ProntuarioDentistaController.cs" />
+    <Compile Include="Controllers\RelatorioController.cs" />
+    <Compile Include="Controllers\RodrigoHajjController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ClinicPulseViewModel.cs" />
+    <Compile Include="Models\formLogin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="Token\Token.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\images\dentista\cuadrado.png" />
+    <Content Include="Content\images\dentista\fondo-grafico-inf.png" />
+    <Content Include="Content\images\dentista\fondo-grafico.png" />
+    <Content Include="Content\images\dentista\lleno.png" />
+    <Content Include="Content\images\dentista\mediolleno.png" />
+    <Content Include="Content\images\dentista\periodontograma-oblicuas.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\cuadrado.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\lleno.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\mediolleno.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tachados-31.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tachados-31b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tachados-32.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tachados-32b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tachados-33.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tachados-33b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tachados-34.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tachados-34b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tachados-35.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tachados-35b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tachados-36.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tachados-36b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tachados-37.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tachados-37b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tachados-38.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tachados-38b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tachados-41.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tachados-41b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tachados-42.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tachados-42b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tachados-43.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tachados-43b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tachados-44.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tachados-44b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tachados-45.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tachados-45b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tachados-46.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tachados-46b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tachados-47.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tachados-47b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tachados-48.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tachados-48b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tornillo-31.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tornillo-31b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tornillo-32.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tornillo-32b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tornillo-33.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tornillo-33b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tornillo-34.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tornillo-34b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tornillo-35.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tornillo-35b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tornillo-36.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tornillo-36b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tornillo-37.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tornillo-37b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tornillo-38.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tornillo-38b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tornillo-41.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tornillo-41b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tornillo-42.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tornillo-42b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tornillo-43.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tornillo-43b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tornillo-44.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tornillo-44b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tornillo-45.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tornillo-45b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tornillo-46.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tornillo-46b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tornillo-47b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tornillo-48.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tornillo-48b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-abajo-tornillo-7.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tachados-11.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tachados-11b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tachados-12.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tachados-12b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tachados-13.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tachados-13b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tachados-14.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tachados-14b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tachados-15.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tachados-15b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tachados-16.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tachados-16b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tachados-17.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tachados-17b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tachados-18.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tachados-18b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tachados-21.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tachados-21b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tachados-22.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tachados-22b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tachados-23.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tachados-23b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tachados-24.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tachados-24b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tachados-25.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tachados-25b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tachados-26.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tachados-26b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tachados-27.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tachados-27b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tachados-28.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tachados-28b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tornillo-11.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tornillo-11b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tornillo-12.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tornillo-12b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tornillo-13.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tornillo-13b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tornillo-14.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tornillo-14b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tornillo-15.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tornillo-15b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tornillo-16.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tornillo-16b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tornillo-17.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tornillo-17b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tornillo-18.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tornillo-18b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tornillo-21.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tornillo-21b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tornillo-22.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tornillo-22b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tornillo-23.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tornillo-23b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tornillo-24.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tornillo-24b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tornillo-25.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tornillo-25b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tornillo-26.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tornillo-26b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tornillo-27.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tornillo-27b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tornillo-28.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\periodontograma-dientes-arriba-tornillo-28b.png" />
+    <Content Include="Content\images\dentista\Periodontograma_files\vacio.png" />
+    <Content Include="Content\images\dentista\sangrado-supuracion.png" />
+    <Content Include="Content\images\dentista\tabla1\implantes\periodontograma-dientes-arriba-tornillo-11.png" />
+    <Content Include="Content\images\dentista\tabla1\implantes\periodontograma-dientes-arriba-tornillo-12.png" />
+    <Content Include="Content\images\dentista\tabla1\implantes\periodontograma-dientes-arriba-tornillo-13.png" />
+    <Content Include="Content\images\dentista\tabla1\implantes\periodontograma-dientes-arriba-tornillo-14.png" />
+    <Content Include="Content\images\dentista\tabla1\implantes\periodontograma-dientes-arriba-tornillo-15.png" />
+    <Content Include="Content\images\dentista\tabla1\implantes\periodontograma-dientes-arriba-tornillo-16.png" />
+    <Content Include="Content\images\dentista\tabla1\implantes\periodontograma-dientes-arriba-tornillo-17.png" />
+    <Content Include="Content\images\dentista\tabla1\implantes\periodontograma-dientes-arriba-tornillo-18.png" />
+    <Content Include="Content\images\dentista\tabla1\periodontograma-dientes-arriba-11.png" />
+    <Content Include="Content\images\dentista\tabla1\periodontograma-dientes-arriba-12.png" />
+    <Content Include="Content\images\dentista\tabla1\periodontograma-dientes-arriba-13.png" />
+    <Content Include="Content\images\dentista\tabla1\periodontograma-dientes-arriba-14.png" />
+    <Content Include="Content\images\dentista\tabla1\periodontograma-dientes-arriba-15.png" />
+    <Content Include="Content\images\dentista\tabla1\periodontograma-dientes-arriba-16.png" />
+    <Content Include="Content\images\dentista\tabla1\periodontograma-dientes-arriba-17.png" />
+    <Content Include="Content\images\dentista\tabla1\periodontograma-dientes-arriba-18.png" />
+    <Content Include="Content\images\dentista\tabla1\tachados\periodontograma-dientes-arriba-tachados-11.png" />
+    <Content Include="Content\images\dentista\tabla1\tachados\periodontograma-dientes-arriba-tachados-12.png" />
+    <Content Include="Content\images\dentista\tabla1\tachados\periodontograma-dientes-arriba-tachados-13.png" />
+    <Content Include="Content\images\dentista\tabla1\tachados\periodontograma-dientes-arriba-tachados-14.png" />
+    <Content Include="Content\images\dentista\tabla1\tachados\periodontograma-dientes-arriba-tachados-15.png" />
+    <Content Include="Content\images\dentista\tabla1\tachados\periodontograma-dientes-arriba-tachados-16.png" />
+    <Content Include="Content\images\dentista\tabla1\tachados\periodontograma-dientes-arriba-tachados-17.png" />
+    <Content Include="Content\images\dentista\tabla1\tachados\periodontograma-dientes-arriba-tachados-18.png" />
+    <Content Include="Content\images\dentista\tabla2\implantes\periodontograma-dientes-arriba-tornillo-21.png" />
+    <Content Include="Content\images\dentista\tabla2\implantes\periodontograma-dientes-arriba-tornillo-22.png" />
+    <Content Include="Content\images\dentista\tabla2\implantes\periodontograma-dientes-arriba-tornillo-23.png" />
+    <Content Include="Content\images\dentista\tabla2\implantes\periodontograma-dientes-arriba-tornillo-24.png" />
+    <Content Include="Content\images\dentista\tabla2\implantes\periodontograma-dientes-arriba-tornillo-25.png" />
+    <Content Include="Content\images\dentista\tabla2\implantes\periodontograma-dientes-arriba-tornillo-26.png" />
+    <Content Include="Content\images\dentista\tabla2\implantes\periodontograma-dientes-arriba-tornillo-27.png" />
+    <Content Include="Content\images\dentista\tabla2\implantes\periodontograma-dientes-arriba-tornillo-28.png" />
+    <Content Include="Content\images\dentista\tabla2\periodontograma-dientes-arriba-21.png" />
+    <Content Include="Content\images\dentista\tabla2\periodontograma-dientes-arriba-22.png" />
+    <Content Include="Content\images\dentista\tabla2\periodontograma-dientes-arriba-23.png" />
+    <Content Include="Content\images\dentista\tabla2\periodontograma-dientes-arriba-24.png" />
+    <Content Include="Content\images\dentista\tabla2\periodontograma-dientes-arriba-25.png" />
+    <Content Include="Content\images\dentista\tabla2\periodontograma-dientes-arriba-26.png" />
+    <Content Include="Content\images\dentista\tabla2\periodontograma-dientes-arriba-27.png" />
+    <Content Include="Content\images\dentista\tabla2\periodontograma-dientes-arriba-28.png" />
+    <Content Include="Content\images\dentista\tabla2\tachados\periodontograma-dientes-arriba-tachados-21.png" />
+    <Content Include="Content\images\dentista\tabla2\tachados\periodontograma-dientes-arriba-tachados-22.png" />
+    <Content Include="Content\images\dentista\tabla2\tachados\periodontograma-dientes-arriba-tachados-23.png" />
+    <Content Include="Content\images\dentista\tabla2\tachados\periodontograma-dientes-arriba-tachados-24.png" />
+    <Content Include="Content\images\dentista\tabla2\tachados\periodontograma-dientes-arriba-tachados-25.png" />
+    <Content Include="Content\images\dentista\tabla2\tachados\periodontograma-dientes-arriba-tachados-26.png" />
+    <Content Include="Content\images\dentista\tabla2\tachados\periodontograma-dientes-arriba-tachados-27.png" />
+    <Content Include="Content\images\dentista\tabla2\tachados\periodontograma-dientes-arriba-tachados-28.png" />
+    <Content Include="Content\images\dentista\tabla3\implantes\periodontograma-dientes-arriba-tornillo-11b.png" />
+    <Content Include="Content\images\dentista\tabla3\implantes\periodontograma-dientes-arriba-tornillo-12b.png" />
+    <Content Include="Content\images\dentista\tabla3\implantes\periodontograma-dientes-arriba-tornillo-13b.png" />
+    <Content Include="Content\images\dentista\tabla3\implantes\periodontograma-dientes-arriba-tornillo-14b.png" />
+    <Content Include="Content\images\dentista\tabla3\implantes\periodontograma-dientes-arriba-tornillo-15b.png" />
+    <Content Include="Content\images\dentista\tabla3\implantes\periodontograma-dientes-arriba-tornillo-16b.png" />
+    <Content Include="Content\images\dentista\tabla3\implantes\periodontograma-dientes-arriba-tornillo-17b.png" />
+    <Content Include="Content\images\dentista\tabla3\implantes\periodontograma-dientes-arriba-tornillo-18b.png" />
+    <Content Include="Content\images\dentista\tabla3\periodontograma-dientes-arriba-11b.png" />
+    <Content Include="Content\images\dentista\tabla3\periodontograma-dientes-arriba-12b.png" />
+    <Content Include="Content\images\dentista\tabla3\periodontograma-dientes-arriba-13b.png" />
+    <Content Include="Content\images\dentista\tabla3\periodontograma-dientes-arriba-14b.png" />
+    <Content Include="Content\images\dentista\tabla3\periodontograma-dientes-arriba-15b.png" />
+    <Content Include="Content\images\dentista\tabla3\periodontograma-dientes-arriba-16b.png" />
+    <Content Include="Content\images\dentista\tabla3\periodontograma-dientes-arriba-17b.png" />
+    <Content Include="Content\images\dentista\tabla3\periodontograma-dientes-arriba-18b.png" />
+    <Content Include="Content\images\dentista\tabla3\tachados\periodontograma-dientes-arriba-tachados-11b.png" />
+    <Content Include="Content\images\dentista\tabla3\tachados\periodontograma-dientes-arriba-tachados-12b.png" />
+    <Content Include="Content\images\dentista\tabla3\tachados\periodontograma-dientes-arriba-tachados-13b.png" />
+    <Content Include="Content\images\dentista\tabla3\tachados\periodontograma-dientes-arriba-tachados-14b.png" />
+    <Content Include="Content\images\dentista\tabla3\tachados\periodontograma-dientes-arriba-tachados-15b.png" />
+    <Content Include="Content\images\dentista\tabla3\tachados\periodontograma-dientes-arriba-tachados-16b.png" />
+    <Content Include="Content\images\dentista\tabla3\tachados\periodontograma-dientes-arriba-tachados-17b.png" />
+    <Content Include="Content\images\dentista\tabla3\tachados\periodontograma-dientes-arriba-tachados-18b.png" />
+    <Content Include="Content\images\dentista\tabla4\implantes\periodontograma-dientes-arriba-tornillo-21b.png" />
+    <Content Include="Content\images\dentista\tabla4\implantes\periodontograma-dientes-arriba-tornillo-22b.png" />
+    <Content Include="Content\images\dentista\tabla4\implantes\periodontograma-dientes-arriba-tornillo-23b.png" />
+    <Content Include="Content\images\dentista\tabla4\implantes\periodontograma-dientes-arriba-tornillo-24b.png" />
+    <Content Include="Content\images\dentista\tabla4\implantes\periodontograma-dientes-arriba-tornillo-25b.png" />
+    <Content Include="Content\images\dentista\tabla4\implantes\periodontograma-dientes-arriba-tornillo-26b.png" />
+    <Content Include="Content\images\dentista\tabla4\implantes\periodontograma-dientes-arriba-tornillo-27b.png" />
+    <Content Include="Content\images\dentista\tabla4\implantes\periodontograma-dientes-arriba-tornillo-28b.png" />
+    <Content Include="Content\images\dentista\tabla4\periodontograma-dientes-arriba-21b.png" />
+    <Content Include="Content\images\dentista\tabla4\periodontograma-dientes-arriba-22b.png" />
+    <Content Include="Content\images\dentista\tabla4\periodontograma-dientes-arriba-23b.png" />
+    <Content Include="Content\images\dentista\tabla4\periodontograma-dientes-arriba-24b.png" />
+    <Content Include="Content\images\dentista\tabla4\periodontograma-dientes-arriba-25b.png" />
+    <Content Include="Content\images\dentista\tabla4\periodontograma-dientes-arriba-26b.png" />
+    <Content Include="Content\images\dentista\tabla4\periodontograma-dientes-arriba-27b.png" />
+    <Content Include="Content\images\dentista\tabla4\periodontograma-dientes-arriba-28b.png" />
+    <Content Include="Content\images\dentista\tabla4\tachados\periodontograma-dientes-arriba-tachados-21b.png" />
+    <Content Include="Content\images\dentista\tabla4\tachados\periodontograma-dientes-arriba-tachados-22b.png" />
+    <Content Include="Content\images\dentista\tabla4\tachados\periodontograma-dientes-arriba-tachados-23b.png" />
+    <Content Include="Content\images\dentista\tabla4\tachados\periodontograma-dientes-arriba-tachados-24b.png" />
+    <Content Include="Content\images\dentista\tabla4\tachados\periodontograma-dientes-arriba-tachados-25b.png" />
+    <Content Include="Content\images\dentista\tabla4\tachados\periodontograma-dientes-arriba-tachados-26b.png" />
+    <Content Include="Content\images\dentista\tabla4\tachados\periodontograma-dientes-arriba-tachados-27b.png" />
+    <Content Include="Content\images\dentista\tabla4\tachados\periodontograma-dientes-arriba-tachados-28b.png" />
+    <Content Include="Content\images\dentista\tabla5\implantes\periodontograma-dientes-abajo-tornillo-41.png" />
+    <Content Include="Content\images\dentista\tabla5\implantes\periodontograma-dientes-abajo-tornillo-42.png" />
+    <Content Include="Content\images\dentista\tabla5\implantes\periodontograma-dientes-abajo-tornillo-43.png" />
+    <Content Include="Content\images\dentista\tabla5\implantes\periodontograma-dientes-abajo-tornillo-44.png" />
+    <Content Include="Content\images\dentista\tabla5\implantes\periodontograma-dientes-abajo-tornillo-45.png" />
+    <Content Include="Content\images\dentista\tabla5\implantes\periodontograma-dientes-abajo-tornillo-46.png" />
+    <Content Include="Content\images\dentista\tabla5\implantes\periodontograma-dientes-abajo-tornillo-47.png" />
+    <Content Include="Content\images\dentista\tabla5\implantes\periodontograma-dientes-abajo-tornillo-48.png" />
+    <Content Include="Content\images\dentista\tabla5\periodontograma-dientes-abajo-41.png" />
+    <Content Include="Content\images\dentista\tabla5\periodontograma-dientes-abajo-42.png" />
+    <Content Include="Content\images\dentista\tabla5\periodontograma-dientes-abajo-43.png" />
+    <Content Include="Content\images\dentista\tabla5\periodontograma-dientes-abajo-44.png" />
+    <Content Include="Content\images\dentista\tabla5\periodontograma-dientes-abajo-45.png" />
+    <Content Include="Content\images\dentista\tabla5\periodontograma-dientes-abajo-46.png" />
+    <Content Include="Content\images\dentista\tabla5\periodontograma-dientes-abajo-47.png" />
+    <Content Include="Content\images\dentista\tabla5\periodontograma-dientes-abajo-48.png" />
+    <Content Include="Content\images\dentista\tabla5\tachados\periodontograma-dientes-abajo-tachados-41.png" />
+    <Content Include="Content\images\dentista\tabla5\tachados\periodontograma-dientes-abajo-tachados-42.png" />
+    <Content Include="Content\images\dentista\tabla5\tachados\periodontograma-dientes-abajo-tachados-43.png" />
+    <Content Include="Content\images\dentista\tabla5\tachados\periodontograma-dientes-abajo-tachados-44.png" />
+    <Content Include="Content\images\dentista\tabla5\tachados\periodontograma-dientes-abajo-tachados-45.png" />
+    <Content Include="Content\images\dentista\tabla5\tachados\periodontograma-dientes-abajo-tachados-46.png" />
+    <Content Include="Content\images\dentista\tabla5\tachados\periodontograma-dientes-abajo-tachados-47.png" />
+    <Content Include="Content\images\dentista\tabla5\tachados\periodontograma-dientes-abajo-tachados-48.png" />
+    <Content Include="Content\images\dentista\tabla6\implantes\periodontograma-dientes-abajo-tornillo-31.png" />
+    <Content Include="Content\images\dentista\tabla6\implantes\periodontograma-dientes-abajo-tornillo-32.png" />
+    <Content Include="Content\images\dentista\tabla6\implantes\periodontograma-dientes-abajo-tornillo-33.png" />
+    <Content Include="Content\images\dentista\tabla6\implantes\periodontograma-dientes-abajo-tornillo-34.png" />
+    <Content Include="Content\images\dentista\tabla6\implantes\periodontograma-dientes-abajo-tornillo-35.png" />
+    <Content Include="Content\images\dentista\tabla6\implantes\periodontograma-dientes-abajo-tornillo-36.png" />
+    <Content Include="Content\images\dentista\tabla6\implantes\periodontograma-dientes-abajo-tornillo-37.png" />
+    <Content Include="Content\images\dentista\tabla6\implantes\periodontograma-dientes-abajo-tornillo-38.png" />
+    <Content Include="Content\images\dentista\tabla6\periodontograma-dientes-abajo-31.png" />
+    <Content Include="Content\images\dentista\tabla6\periodontograma-dientes-abajo-32.png" />
+    <Content Include="Content\images\dentista\tabla6\periodontograma-dientes-abajo-33.png" />
+    <Content Include="Content\images\dentista\tabla6\periodontograma-dientes-abajo-34.png" />
+    <Content Include="Content\images\dentista\tabla6\periodontograma-dientes-abajo-35.png" />
+    <Content Include="Content\images\dentista\tabla6\periodontograma-dientes-abajo-36.png" />
+    <Content Include="Content\images\dentista\tabla6\periodontograma-dientes-abajo-37.png" />
+    <Content Include="Content\images\dentista\tabla6\periodontograma-dientes-abajo-38.png" />
+    <Content Include="Content\images\dentista\tabla6\tachados\periodontograma-dientes-abajo-tachados-31.png" />
+    <Content Include="Content\images\dentista\tabla6\tachados\periodontograma-dientes-abajo-tachados-32.png" />
+    <Content Include="Content\images\dentista\tabla6\tachados\periodontograma-dientes-abajo-tachados-33.png" />
+    <Content Include="Content\images\dentista\tabla6\tachados\periodontograma-dientes-abajo-tachados-34.png" />
+    <Content Include="Content\images\dentista\tabla6\tachados\periodontograma-dientes-abajo-tachados-35.png" />
+    <Content Include="Content\images\dentista\tabla6\tachados\periodontograma-dientes-abajo-tachados-36.png" />
+    <Content Include="Content\images\dentista\tabla6\tachados\periodontograma-dientes-abajo-tachados-37.png" />
+    <Content Include="Content\images\dentista\tabla6\tachados\periodontograma-dientes-abajo-tachados-38.png" />
+    <Content Include="Content\images\dentista\tabla7\implantes\periodontograma-dientes-abajo-tornillo-41b.png" />
+    <Content Include="Content\images\dentista\tabla7\implantes\periodontograma-dientes-abajo-tornillo-42b.png" />
+    <Content Include="Content\images\dentista\tabla7\implantes\periodontograma-dientes-abajo-tornillo-43b.png" />
+    <Content Include="Content\images\dentista\tabla7\implantes\periodontograma-dientes-abajo-tornillo-44b.png" />
+    <Content Include="Content\images\dentista\tabla7\implantes\periodontograma-dientes-abajo-tornillo-45b.png" />
+    <Content Include="Content\images\dentista\tabla7\implantes\periodontograma-dientes-abajo-tornillo-46b.png" />
+    <Content Include="Content\images\dentista\tabla7\implantes\periodontograma-dientes-abajo-tornillo-47b.png" />
+    <Content Include="Content\images\dentista\tabla7\implantes\periodontograma-dientes-abajo-tornillo-48b.png" />
+    <Content Include="Content\images\dentista\tabla7\periodontograma-dientes-abajo-41b.png" />
+    <Content Include="Content\images\dentista\tabla7\periodontograma-dientes-abajo-42b.png" />
+    <Content Include="Content\images\dentista\tabla7\periodontograma-dientes-abajo-43b.png" />
+    <Content Include="Content\images\dentista\tabla7\periodontograma-dientes-abajo-44b.png" />
+    <Content Include="Content\images\dentista\tabla7\periodontograma-dientes-abajo-45b.png" />
+    <Content Include="Content\images\dentista\tabla7\periodontograma-dientes-abajo-46b.png" />
+    <Content Include="Content\images\dentista\tabla7\periodontograma-dientes-abajo-47b.png" />
+    <Content Include="Content\images\dentista\tabla7\periodontograma-dientes-abajo-48b.png" />
+    <Content Include="Content\images\dentista\tabla7\tachados\periodontograma-dientes-abajo-tachados-41b.png" />
+    <Content Include="Content\images\dentista\tabla7\tachados\periodontograma-dientes-abajo-tachados-42b.png" />
+    <Content Include="Content\images\dentista\tabla7\tachados\periodontograma-dientes-abajo-tachados-43b.png" />
+    <Content Include="Content\images\dentista\tabla7\tachados\periodontograma-dientes-abajo-tachados-45b.png" />
+    <Content Include="Content\images\dentista\tabla7\tachados\periodontograma-dientes-abajo-tachados-46b.png" />
+    <Content Include="Content\images\dentista\tabla7\tachados\periodontograma-dientes-abajo-tachados-47b.png" />
+    <Content Include="Content\images\dentista\tabla7\tachados\periodontograma-dientes-abajo-tachados-48b.png" />
+    <Content Include="Content\images\dentista\tabla8\implantes\periodontograma-dientes-abajo-tornillo-31b.png" />
+    <Content Include="Content\images\dentista\tabla8\implantes\periodontograma-dientes-abajo-tornillo-32b.png" />
+    <Content Include="Content\images\dentista\tabla8\implantes\periodontograma-dientes-abajo-tornillo-33b.png" />
+    <Content Include="Content\images\dentista\tabla8\implantes\periodontograma-dientes-abajo-tornillo-34b.png" />
+    <Content Include="Content\images\dentista\tabla8\implantes\periodontograma-dientes-abajo-tornillo-35b.png" />
+    <Content Include="Content\images\dentista\tabla8\implantes\periodontograma-dientes-abajo-tornillo-36b.png" />
+    <Content Include="Content\images\dentista\tabla8\implantes\periodontograma-dientes-abajo-tornillo-37b.png" />
+    <Content Include="Content\images\dentista\tabla8\implantes\periodontograma-dientes-abajo-tornillo-38b.png" />
+    <Content Include="Content\images\dentista\tabla8\periodontograma-dientes-abajo-31b.png" />
+    <Content Include="Content\images\dentista\tabla8\periodontograma-dientes-abajo-32b.png" />
+    <Content Include="Content\images\dentista\tabla8\periodontograma-dientes-abajo-33b.png" />
+    <Content Include="Content\images\dentista\tabla8\periodontograma-dientes-abajo-34b.png" />
+    <Content Include="Content\images\dentista\tabla8\periodontograma-dientes-abajo-35b.png" />
+    <Content Include="Content\images\dentista\tabla8\periodontograma-dientes-abajo-36b.png" />
+    <Content Include="Content\images\dentista\tabla8\periodontograma-dientes-abajo-37b.png" />
+    <Content Include="Content\images\dentista\tabla8\periodontograma-dientes-abajo-38b.png" />
+    <Content Include="Content\images\dentista\tabla8\tachados\periodontograma-dientes-abajo-tachados-31b.png" />
+    <Content Include="Content\images\dentista\tabla8\tachados\periodontograma-dientes-abajo-tachados-32b.png" />
+    <Content Include="Content\images\dentista\tabla8\tachados\periodontograma-dientes-abajo-tachados-33b.png" />
+    <Content Include="Content\images\dentista\tabla8\tachados\periodontograma-dientes-abajo-tachados-34b.png" />
+    <Content Include="Content\images\dentista\tabla8\tachados\periodontograma-dientes-abajo-tachados-35b.png" />
+    <Content Include="Content\images\dentista\tabla8\tachados\periodontograma-dientes-abajo-tachados-36b.png" />
+    <Content Include="Content\images\dentista\tabla8\tachados\periodontograma-dientes-abajo-tachados-37b.png" />
+    <Content Include="Content\images\dentista\tabla8\tachados\periodontograma-dientes-abajo-tachados-38b.png" />
+    <Content Include="Content\images\dentista\vacio.png" />
+    <Content Include="Content\images\helper.png" />
+    <Content Include="Content\images\helpermini.png" />
+    <Content Include="Content\images\semfoto.jpg" />
+    <Content Include="Content\plugins\autocomplete\chosen.css" />
+    <Content Include="Content\plugins\autocomplete\chosen.jquery.js" />
+    <Content Include="Content\plugins\autocomplete\chosen.jquery.min.js" />
+    <Content Include="Content\plugins\autocomplete\chosen.min.css" />
+    <Content Include="Content\plugins\autocomplete\chosen.proto.js" />
+    <Content Include="Content\plugins\autocomplete\chosen.proto.min.js" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\plugins\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\plugins\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\plugins\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\plugins\bootstrap\js\npm.js" />
+    <Content Include="Content\plugins\dentista\estilo.css" />
+    <Content Include="Content\plugins\dentista\odonto.js" />
+    <Content Include="Content\plugins\dist\css\AdminLTE.css" />
+    <Content Include="Content\plugins\dist\css\AdminLTE.min.css" />
+    <Content Include="Content\plugins\dist\css\skins\skin-black-light.css" />
+    <Content Include="Content\plugins\dist\css\skins\skin-black-light.min.css" />
+    <Content Include="Content\plugins\dist\css\skins\skin-black.css" />
+    <Content Include="Content\plugins\dist\css\skins\skin-black.min.css" />
+    <Content Include="Content\plugins\dist\css\skins\skin-blue-light.css" />
+    <Content Include="Content\plugins\dist\css\skins\skin-blue-light.min.css" />
+    <Content Include="Content\plugins\dist\css\skins\skin-blue.css" />
+    <Content Include="Content\plugins\dist\css\skins\skin-blue.min.css" />
+    <Content Include="Content\plugins\dist\css\skins\skin-green-light.css" />
+    <Content Include="Content\plugins\dist\css\skins\skin-green-light.min.css" />
+    <Content Include="Content\plugins\dist\css\skins\skin-green.css" />
+    <Content Include="Content\plugins\dist\css\skins\skin-green.min.css" />
+    <Content Include="Content\plugins\dist\css\skins\skin-purple-light.css" />
+    <Content Include="Content\plugins\dist\css\skins\skin-purple-light.min.css" />
+    <Content Include="Content\plugins\dist\css\skins\skin-purple.css" />
+    <Content Include="Content\plugins\dist\css\skins\skin-purple.min.css" />
+    <Content Include="Content\plugins\dist\css\skins\skin-red-light.css" />
+    <Content Include="Content\plugins\dist\css\skins\skin-red-light.min.css" />
+    <Content Include="Content\plugins\dist\css\skins\skin-red.css" />
+    <Content Include="Content\plugins\dist\css\skins\skin-red.min.css" />
+    <Content Include="Content\plugins\dist\css\skins\skin-yellow-light.css" />
+    <Content Include="Content\plugins\dist\css\skins\skin-yellow-light.min.css" />
+    <Content Include="Content\plugins\dist\css\skins\skin-yellow.css" />
+    <Content Include="Content\plugins\dist\css\skins\skin-yellow.min.css" />
+    <Content Include="Content\plugins\dist\css\skins\_all-skins.css" />
+    <Content Include="Content\plugins\dist\css\skins\_all-skins.min.css" />
+    <Content Include="Content\plugins\dist\img\avatar.png" />
+    <Content Include="Content\plugins\dist\img\avatar04.png" />
+    <Content Include="Content\plugins\dist\img\avatar2.png" />
+    <Content Include="Content\plugins\dist\img\avatar3.png" />
+    <Content Include="Content\plugins\dist\img\avatar5.png" />
+    <Content Include="Content\plugins\dist\img\boxed-bg.jpg" />
+    <Content Include="Content\plugins\dist\img\boxed-bg.png" />
+    <Content Include="Content\plugins\dist\img\credit\american-express.png" />
+    <Content Include="Content\plugins\dist\img\credit\cirrus.png" />
+    <Content Include="Content\plugins\dist\img\credit\mastercard.png" />
+    <Content Include="Content\plugins\dist\img\credit\mestro.png" />
+    <Content Include="Content\plugins\dist\img\credit\paypal.png" />
+    <Content Include="Content\plugins\dist\img\credit\paypal2.png" />
+    <Content Include="Content\plugins\dist\img\credit\visa.png" />
+    <Content Include="Content\plugins\dist\img\default-50x50.gif" />
+    <Content Include="Content\plugins\dist\img\icons.png" />
+    <Content Include="Content\plugins\dist\img\photo1.png" />
+    <Content Include="Content\plugins\dist\img\photo2.png" />
+    <Content Include="Content\plugins\dist\img\user1-128x128.jpg" />
+    <Content Include="Content\plugins\dist\img\user2-160x160.jpg" />
+    <Content Include="Content\plugins\dist\img\user3-128x128.jpg" />
+    <Content Include="Content\plugins\dist\img\user4-128x128.jpg" />
+    <Content Include="Content\plugins\dist\img\user5-128x128.jpg" />
+    <Content Include="Content\plugins\dist\img\user6-128x128.jpg" />
+    <Content Include="Content\plugins\dist\img\user7-128x128.jpg" />
+    <Content Include="Content\plugins\dist\img\user8-128x128.jpg" />
+    <Content Include="Content\plugins\dist\js\app.js" />
+    <Content Include="Content\plugins\dist\js\app.min.js" />
+    <Content Include="Content\plugins\dist\js\demo.js" />
+    <Content Include="Content\plugins\dist\js\pages\dashboard.js" />
+    <Content Include="Content\plugins\dist\js\pages\dashboard2.js" />
+    <Content Include="Content\images\cidade.jpg" />
+    <Content Include="Content\images\cidade1.jpg" />
+    <Content Include="Content\images\cidade2.jpg" />
+    <Content Include="Content\images\cidade3.jpg" />
+    <Content Include="Content\images\cidade4.jpg" />
+    <Content Include="Content\images\cidade5.jpg" />
+    <Content Include="Content\images\pulse.jpg" />
+    <Content Include="Content\images\pulse1.jpg" />
+    <Content Include="Content\images\pulse2.jpg" />
+    <Content Include="Content\images\pulse3.jpg" />
+    <Content Include="Content\images\pulse3.png" />
+    <Content Include="Content\images\rodrigohajj.jpg" />
+    <Content Include="Content\LogIn.css" />
+    <Content Include="Content\odk.png" />
+    <Content Include="Content\plugins\alertfy\alertify.bootstrap.css" />
+    <Content Include="Content\plugins\alertfy\alertify.core.css" />
+    <Content Include="Content\plugins\alertfy\alertify.default.css" />
+    <Content Include="Content\plugins\alertfy\alertify.js" />
+    <Content Include="Content\plugins\datepicker\bootstrap-datepicker.js" />
+    <Content Include="Content\plugins\datepicker\datepicker.js" />
+    <Content Include="Content\plugins\datepicker\datepicker3.css" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.ar.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.az.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.bg.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.ca.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.cs.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.cy.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.da.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.de.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.el.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.es.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.et.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.fa.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.fi.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.fr.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.gl.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.he.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.hr.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.hu.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.id.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.is.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.it.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.ja.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.ka.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.kk.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.kr.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.lt.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.lv.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.mk.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.ms.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.nb.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.nl-BE.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.nl.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.no.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.pl.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.pt-BR.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.pt.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.ro.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.rs-latin.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.rs.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.ru.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.sk.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.sl.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.sq.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.sv.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.sw.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.th.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.tr.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.ua.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.vi.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.zh-CN.js" />
+    <Content Include="Content\plugins\datepicker\locales\bootstrap-datepicker.zh-TW.js" />
+    <Content Include="Content\plugins\fastclick\fastclick.js" />
+    <Content Include="Content\plugins\fastclick\fastclick.min.js" />
+    <Content Include="Content\plugins\fullcalendar\fullcalendar.css" />
+    <Content Include="Content\plugins\fullcalendar\fullcalendar.js" />
+    <Content Include="Content\plugins\fullcalendar\fullcalendar.min.css" />
+    <Content Include="Content\plugins\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Content\plugins\fullcalendar\fullcalendar.print.css" />
+    <Content Include="Content\plugins\iCheck\demo\css\banner.jpg" />
+    <Content Include="Content\plugins\iCheck\demo\css\custom.css" />
+    <Content Include="Content\plugins\iCheck\demo\css\icheck.png" />
+    <Content Include="Content\plugins\iCheck\demo\css\ie\arrow-bottom.png" />
+    <Content Include="Content\plugins\iCheck\demo\css\ie\arrow-top.png" />
+    <Content Include="Content\plugins\iCheck\demo\css\ie\header-line.png" />
+    <Content Include="Content\plugins\iCheck\demo\css\ie\icon-fork.png" />
+    <Content Include="Content\plugins\iCheck\demo\css\ie\icon-github.png" />
+    <Content Include="Content\plugins\iCheck\demo\css\ie\icon-lab.png" />
+    <Content Include="Content\plugins\iCheck\demo\css\ie\icon-options.png" />
+    <Content Include="Content\plugins\iCheck\demo\css\ie\icon-star.png" />
+    <Content Include="Content\plugins\iCheck\demo\css\montserrat-bold.svg" />
+    <Content Include="Content\plugins\iCheck\demo\css\montserrat-regular.svg" />
+    <Content Include="Content\plugins\iCheck\demo\css\normalize.css" />
+    <Content Include="Content\plugins\iCheck\demo\index.html" />
+    <Content Include="Content\plugins\iCheck\demo\js\custom.js" />
+    <Content Include="Content\plugins\iCheck\demo\js\custom.min.js" />
+    <Content Include="Content\plugins\iCheck\demo\js\jquery.js" />
+    <Content Include="Content\plugins\iCheck\demo\js\zepto.js" />
+    <Content Include="Content\plugins\iCheck\icheck.js" />
+    <Content Include="Content\plugins\iCheck\icheck.min.js" />
+    <Content Include="Content\plugins\iCheck\skins\all.css" />
+    <Content Include="Content\plugins\iCheck\skins\flat\aero%402x.png" />
+    <Content Include="Content\plugins\iCheck\skins\flat\aero.css" />
+    <Content Include="Content\plugins\iCheck\skins\flat\aero.png" />
+    <Content Include="Content\plugins\iCheck\skins\flat\blue%402x.png" />
+    <Content Include="Content\plugins\iCheck\skins\flat\blue.css" />
+    <Content Include="Content\plugins\iCheck\skins\flat\blue.png" />
+    <Content Include="Content\plugins\iCheck\skins\flat\flat%402x.png" />
+    <Content Include="Content\plugins\iCheck\skins\flat\flat.css" />
+    <Content Include="Content\plugins\iCheck\skins\flat\flat.png" />
+    <Content Include="Content\plugins\iCheck\skins\flat\green%402x.png" />
+    <Content Include="Content\plugins\iCheck\skins\flat\green.css" />
+    <Content Include="Content\plugins\iCheck\skins\flat\green.png" />
+    <Content Include="Content\plugins\iCheck\skins\flat\grey%402x.png" />
+    <Content Include="Content\plugins\iCheck\skins\flat\grey.css" />
+    <Content Include="Content\plugins\iCheck\skins\flat\grey.png" />
+    <Content Include="Content\plugins\iCheck\skins\flat\orange%402x.png" />
+    <Content Include="Content\plugins\iCheck\skins\flat\orange.css" />
+    <Content Include="Content\plugins\iCheck\skins\flat\orange.png" />
+    <Content Include="Content\plugins\iCheck\skins\flat\pink%402x.png" />
+    <Content Include="Content\plugins\iCheck\skins\flat\pink.css" />
+    <Content Include="Content\plugins\iCheck\skins\flat\pink.png" />
+    <Content Include="Content\plugins\iCheck\skins\flat\purple%402x.png" />
+    <Content Include="Content\plugins\iCheck\skins\flat\purple.css" />
+    <Content Include="Content\plugins\iCheck\skins\flat\purple.png" />
+    <Content Include="Content\plugins\iCheck\skins\flat\red%402x.png" />
+    <Content Include="Content\plugins\iCheck\skins\flat\red.css" />
+    <Content Include="Content\plugins\iCheck\skins\flat\red.png" />
+    <Content Include="Content\plugins\iCheck\skins\flat\yellow%402x.png" />
+    <Content Include="Content\plugins\iCheck\skins\flat\yellow.css" />
+    <Content Include="Content\plugins\iCheck\skins\flat\yellow.png" />
+    <Content Include="Content\plugins\iCheck\skins\flat\_all.css" />
+    <Content Include="Content\plugins\iCheck\skins\futurico\futurico%402x.png" />
+    <Content Include="Content\plugins\iCheck\skins\futurico\futurico.css" />
+    <Content Include="Content\plugins\iCheck\skins\futurico\futurico.png" />
+    <Content Include="Content\plugins\iCheck\skins\line\aero.css" />
+    <Content Include="Content\plugins\iCheck\skins\line\blue.css" />
+    <Content Include="Content\plugins\iCheck\skins\line\green.css" />
+    <Content Include="Content\plugins\iCheck\skins\line\grey.css" />
+    <Content Include="Content\plugins\iCheck\skins\line\line%402x.png" />
+    <Content Include="Content\plugins\iCheck\skins\line\line.css" />
+    <Content Include="Content\plugins\iCheck\skins\line\line.png" />
+    <Content Include="Content\plugins\iCheck\skins\line\orange.css" />
+    <Content Include="Content\plugins\iCheck\skins\line\pink.css" />
+    <Content Include="Content\plugins\iCheck\skins\line\purple.css" />
+    <Content Include="Content\plugins\iCheck\skins\line\red.css" />
+    <Content Include="Content\plugins\iCheck\skins\line\yellow.css" />
+    <Content Include="Content\plugins\iCheck\skins\line\_all.css" />
+    <Content Include="Content\plugins\iCheck\skins\minimal\aero%402x.png" />
+    <Content Include="Content\plugins\iCheck\skins\minimal\aero.css" />
+    <Content Include="Content\plugins\iCheck\skins\minimal\aero.png" />
+    <Content Include="Content\plugins\iCheck\skins\minimal\blue%402x.png" />
+    <Content Include="Content\plugins\iCheck\skins\minimal\blue.css" />
+    <Content Include="Content\plugins\iCheck\skins\minimal\blue.png" />
+    <Content Include="Content\plugins\iCheck\skins\minimal\green%402x.png" />
+    <Content Include="Content\plugins\iCheck\skins\minimal\green.css" />
+    <Content Include="Content\plugins\iCheck\skins\minimal\green.png" />
+    <Content Include="Content\plugins\iCheck\skins\minimal\grey%402x.png" />
+    <Content Include="Content\plugins\iCheck\skins\minimal\grey.css" />
+    <Content Include="Content\plugins\iCheck\skins\minimal\grey.png" />
+    <Content Include="Content\plugins\iCheck\skins\minimal\minimal%402x.png" />
+    <Content Include="Content\plugins\iCheck\skins\minimal\minimal.css" />
+    <Content Include="Content\plugins\iCheck\skins\minimal\minimal.png" />
+    <Content Include="Content\plugins\iCheck\skins\minimal\orange%402x.png" />
+    <Content Include="Content\plugins\iCheck\skins\minimal\orange.css" />
+    <Content Include="Content\plugins\iCheck\skins\minimal\orange.png" />
+    <Content Include="Content\plugins\iCheck\skins\minimal\pink%402x.png" />
+    <Content Include="Content\plugins\iCheck\skins\minimal\pink.css" />
+    <Content Include="Content\plugins\iCheck\skins\minimal\pink.png" />
+    <Content Include="Content\plugins\iCheck\skins\minimal\purple%402x.png" />
+    <Content Include="Content\plugins\iCheck\skins\minimal\purple.css" />
+    <Content Include="Content\plugins\iCheck\skins\minimal\purple.png" />
+    <Content Include="Content\plugins\iCheck\skins\minimal\red%402x.png" />
+    <Content Include="Content\plugins\iCheck\skins\minimal\red.css" />
+    <Content Include="Content\plugins\iCheck\skins\minimal\red.png" />
+    <Content Include="Content\plugins\iCheck\skins\minimal\yellow%402x.png" />
+    <Content Include="Content\plugins\iCheck\skins\minimal\yellow.css" />
+    <Content Include="Content\plugins\iCheck\skins\minimal\yellow.png" />
+    <Content Include="Content\plugins\iCheck\skins\minimal\_all.css" />
+    <Content Include="Content\plugins\iCheck\skins\polaris\polaris%402x.png" />
+    <Content Include="Content\plugins\iCheck\skins\polaris\polaris.css" />
+    <Content Include="Content\plugins\iCheck\skins\polaris\polaris.png" />
+    <Content Include="Content\plugins\iCheck\skins\square\aero%402x.png" />
+    <Content Include="Content\plugins\iCheck\skins\square\aero.css" />
+    <Content Include="Content\plugins\iCheck\skins\square\aero.png" />
+    <Content Include="Content\plugins\iCheck\skins\square\blue%402x.png" />
+    <Content Include="Content\plugins\iCheck\skins\square\blue.css" />
+    <Content Include="Content\plugins\iCheck\skins\square\blue.png" />
+    <Content Include="Content\plugins\iCheck\skins\square\green%402x.png" />
+    <Content Include="Content\plugins\iCheck\skins\square\green.css" />
+    <Content Include="Content\plugins\iCheck\skins\square\green.png" />
+    <Content Include="Content\plugins\iCheck\skins\square\grey%402x.png" />
+    <Content Include="Content\plugins\iCheck\skins\square\grey.css" />
+    <Content Include="Content\plugins\iCheck\skins\square\grey.png" />
+    <Content Include="Content\plugins\iCheck\skins\square\orange%402x.png" />
+    <Content Include="Content\plugins\iCheck\skins\square\orange.css" />
+    <Content Include="Content\plugins\iCheck\skins\square\orange.png" />
+    <Content Include="Content\plugins\iCheck\skins\square\pink%402x.png" />
+    <Content Include="Content\plugins\iCheck\skins\square\pink.css" />
+    <Content Include="Content\plugins\iCheck\skins\square\pink.png" />
+    <Content Include="Content\plugins\iCheck\skins\square\purple%402x.png" />
+    <Content Include="Content\plugins\iCheck\skins\square\purple.css" />
+    <Content Include="Content\plugins\iCheck\skins\square\purple.png" />
+    <Content Include="Content\plugins\iCheck\skins\square\red%402x.png" />
+    <Content Include="Content\plugins\iCheck\skins\square\red.css" />
+    <Content Include="Content\plugins\iCheck\skins\square\red.png" />
+    <Content Include="Content\plugins\iCheck\skins\square\square%402x.png" />
+    <Content Include="Content\plugins\iCheck\skins\square\square.css" />
+    <Content Include="Content\plugins\iCheck\skins\square\square.png" />
+    <Content Include="Content\plugins\iCheck\skins\square\yellow%402x.png" />
+    <Content Include="Content\plugins\iCheck\skins\square\yellow.css" />
+    <Content Include="Content\plugins\iCheck\skins\square\yellow.png" />
+    <Content Include="Content\plugins\iCheck\skins\square\_all.css" />
+    <Content Include="Content\plugins\input-mask\jquery.mask.js" />
+    <Content Include="Content\plugins\jQueryUI\jquery-ui-1.10.3.js" />
+    <Content Include="Content\plugins\jQueryUI\jquery-ui-1.10.3.min.js" />
+    <Content Include="Content\plugins\jQuery\jQuery-2.1.4.min.js" />
+    <Content Include="Content\plugins\slimScroll\jquery.slimscroll.js" />
+    <Content Include="Content\plugins\slimScroll\jquery.slimscroll.min.js" />
+    <Content Include="Content\RodrigoHajj.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\plugins\siteprincipal\css\core-styles.min.css" />
+    <Content Include="Content\plugins\siteprincipal\css\google-lapis-yanone.css" />
+    <Content Include="Content\plugins\siteprincipal\css\google-lapis.css" />
+    <Content Include="Content\plugins\siteprincipal\css\img\aaaa.jpg" />
+    <Content Include="Content\plugins\siteprincipal\css\img\bbbb.jpg" />
+    <Content Include="Content\plugins\siteprincipal\css\img\cidade1.jpg" />
+    <Content Include="Content\plugins\siteprincipal\css\img\consultorio.jpg" />
+    <Content Include="Content\plugins\siteprincipal\css\img\fx.ico" />
+    <Content Include="Content\plugins\siteprincipal\css\img\portfolio.jpg" />
+    <Content Include="Content\plugins\siteprincipal\css\img\tag-bg.png" />
+    <Content Include="Content\plugins\siteprincipal\css\img\wallstreetbulla.jpg" />
+    <Content Include="Content\plugins\siteprincipal\css\img\wallstreetbulld.jpg" />
+    <Content Include="Content\plugins\siteprincipal\css\img\wallstreetbulldfs.png" />
+    <Content Include="Content\plugins\siteprincipal\css\img\wallstreetbulle.jpg" />
+    <Content Include="Content\plugins\siteprincipal\css\img\wallstreetbullfds.jpg" />
+    <Content Include="Content\plugins\siteprincipal\css\img\wallstreetbullsss.jpg" />
+    <Content Include="Content\plugins\siteprincipal\css\owl-carousel.min.css" />
+    <Content Include="Content\plugins\siteprincipal\inc\js\min\core-scripts.min.js" />
+    <Content Include="Content\plugins\siteprincipal\inc\js\min\functions.min.js" />
+    <Content Include="Content\plugins\siteprincipal\inc\js\plugins\plugins.min.js" />
+    <Content Include="Content\plugins\siteprincipal\inc\js\plugins\nav.min.js" />
+    <Content Include="Content\plugins\siteprincipal\inc\js\plugins\owl-carousel.min.js" />
+    <Content Include="Content\plugins\siteprincipal\inc\js\plugins\scrollto.min.js" />
+    <Content Include="Content\plugins\siteprincipal\inc\js\plugins\smooth-scroll.min.js" />
+    <Content Include="Content\plugins\themes\base\jquery-ui.css" />
+    <Content Include="Global.asax" />
+    <Content Include="js\agendaindexcript.js" />
+    <Content Include="js\agendaindexoriginal.js" />
+    <Content Include="js\cadastregratiscript.js" />
+    <Content Include="js\cadastregratisoriginal.js" />
+    <Content Include="js\cadastroindexcript.js" />
+    <Content Include="js\configuracaoindexoriginal.js" />
+    <Content Include="js\cadastroindexoriginal.js" />
+    <Content Include="js\consultaconsultacript.js" />
+    <Content Include="js\consultaconsultaoriginal.js" />
+    <Content Include="js\consultaindexcript.js" />
+    <Content Include="js\consultaindexusuariooriginal.js" />
+    <Content Include="js\consultaindexoriginal.js" />
+    <Content Include="js\painelindexcript.js" />
+    <Content Include="js\painelindexoriginal.js" />
+    <Content Include="js\painellembretescript.js" />
+    <Content Include="js\painellembretesoriginal.js" />
+    <Content Include="js\prontuariodentistaoriginal.js" />
+    <Content Include="js\prontuarioindexcript.js" />
+    <Content Include="js\prontuarioindexoriginal.js" />
+    <Content Include="js\prontuarioprontuariocript.js" />
+    <Content Include="js\prontuarioprontuariooriginal.js" />
+    <Content Include="js\relatorioindexcript.js" />
+    <Content Include="js\relatorioindexoriginal.js" />
+    <Content Include="js\rodrigohajjoriginal.js" />
+    <Content Include="Robot.txt" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\plugins\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\plugins\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\plugins\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\plugins\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\plugins\iCheck\.gitignore" />
+    <Content Include="Content\plugins\iCheck\bower.json" />
+    <Content Include="Content\plugins\iCheck\CHANGELOG.md" />
+    <Content Include="Content\plugins\iCheck\demo\css\custom.styl" />
+    <Content Include="Content\plugins\iCheck\demo\css\montserrat-bold.eot" />
+    <Content Include="Content\plugins\iCheck\demo\css\montserrat-bold.ttf" />
+    <Content Include="Content\plugins\iCheck\demo\css\montserrat-bold.woff" />
+    <Content Include="Content\plugins\iCheck\demo\css\montserrat-regular.eot" />
+    <Content Include="Content\plugins\iCheck\demo\css\montserrat-regular.ttf" />
+    <Content Include="Content\plugins\iCheck\demo\css\montserrat-regular.woff" />
+    <Content Include="Content\plugins\iCheck\icheck.jquery.json" />
+    <Content Include="Content\plugins\iCheck\README.md" />
+    <None Include="Properties\PublishProfiles\Clinic Pulse.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\metodospt.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\LogIn\Index.cshtml" />
+    <Content Include="Views\LogIn\Falhaantiga.cshtml" />
+    <Content Include="Views\Cadastro\Index.cshtml" />
+    <Content Include="Views\Consulta\Index.cshtml" />
+    <Content Include="Views\Consulta\_GridConsulta.cshtml" />
+    <Content Include="Views\Consulta\_Consulta.cshtml" />
+    <Content Include="Views\Painel\Index.cshtml" />
+    <Content Include="Views\Painel\_Lembretes.cshtml" />
+    <Content Include="Views\Agenda\Index.cshtml" />
+    <Content Include="Views\Prontuario\Index.cshtml" />
+    <Content Include="Views\Prontuario\_GridProntuario.cshtml" />
+    <Content Include="Views\Prontuario\ProntuarioBackup.cshtml" />
+    <Content Include="Views\Relatorio\Index.cshtml" />
+    <Content Include="Views\Agenda\Prontuarioold.cshtml" />
+    <Content Include="Views\CadastreGratis\Index.cshtml" />
+    <Content Include="Views\ProntuarioDentista\Index.cshtml" />
+    <Content Include="Views\RodrigoHajj\Index.cshtml" />
+    <Content Include="Views\CadastroUsuario\Index.cshtml" />
+    <Content Include="Views\ConsultaUsuario\Index.cshtml" />
+    <Content Include="Views\ConsultaUsuario\_Consulta.cshtml" />
+    <Content Include="Views\ConsultaUsuario\_GridConsulta.cshtml" />
+    <Content Include="Views\Prontuario\_Odontograma.cshtml" />
+    <Content Include="Views\Configuracao\Index.cshtml" />
+    <Content Include="Views\Painel\_LembretesMensagens.cshtml" />
+    <Content Include="Views\Prontuario\_TabProntuario.cshtml" />
+    <Content Include="Views\Prontuario\Prontuario.cshtml" />
+    <Content Include="Views\Prontuario\_TabProntuarioTimeline.cshtml" />
+    <Content Include="Views\LogIn\Falha.cshtml" />
+    <Content Include="Views\LogIn\FalhaSessaoAtiva.cshtml" />
+    <Content Include="Views\Shared\InvalidSession.cshtml" />
+    <Content Include="Views\Shared\LoginException.cshtml" />
+    <Content Include="Views\Agenda\Prontuario.cshtml" />
+    <Content Include="Views\Agenda\_TabProntuarioTimeline.cshtml" />
+    <Content Include="Views\Agenda\_TabProntuario.cshtml" />
+    <Content Include="Views\Agenda\_Odontograma.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\plugins\NewFolder1\" />
+    <Folder Include="Views\Logout\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Aplicacao\Aplicacao.csproj">
+      <Project>{bbc83fd6-3e18-4018-8f97-cd4dd1e0d56a}</Project>
+      <Name>Aplicacao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dominio\Dominio.csproj">
+      <Project>{1bb5b7eb-3390-4e3f-9182-5294bf0653d4}</Project>
+      <Name>Dominio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>34012</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:34012/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

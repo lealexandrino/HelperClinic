@@ -1,0 +1,71 @@
+﻿@model ClinicPulse.Models.ClinicPulseViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper" style="min-height: 946px;">
+
+    <section class="content-header">
+        <h1>
+            Prontuário de Pacientes
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="/Painel"><i class="fa fa-dashboard"></i> Painel</a></li>
+            <li class="active">Prontuário de Pacientes</li>
+        </ol>
+    </section>
+    <section class="content" id="secGrid">
+        <div id="divConvenios">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="box box-info">
+                        <div class="box-header">
+                            <h3 class="box-title">Consultar Paciente</h3>
+                        </div>
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>Procurar por:</label>
+                                    <select id="drpBuscar" class="form-control">
+                                        <option value=""></option>
+                                        <option value="Nome">Nome do paciente</option>
+                                        <option value="Cpf">Cpf</option>
+                                    </select>
+                                </div>
+                            </div><br />
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class=" input-group">
+                                        <input id="txtBuscar" class="form-control" type="text" />
+                                        <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="box box-info">
+                        <div class="box-header">
+                            <h3 class="box-title">Lista</h3>
+                        </div>
+                        <div class="box-body">
+                            <div class="row">
+                                @using (Ajax.BeginForm("Prontuario", "Prontuario",new AjaxOptions { HttpMethod = "Post" }, new { id = "formProntuario" }))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    @Html.HiddenFor(x => x.ProntuarioConsulta.IdPaciente, new { @id = "hdnProntuarioId" })
+                                    <div id="divGridProntuario" class="col-xs-12">
+                                        @Html.Partial("_GridProntuario")
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<script src="~/js/prontuarioindexcript.js"></script>

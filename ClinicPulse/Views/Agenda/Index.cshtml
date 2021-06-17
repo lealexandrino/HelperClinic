@@ -1,0 +1,165 @@
+﻿@model ClinicPulse.Models.ClinicPulseViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/plugins/fullcalendar/fullcalendar.print.css" rel="stylesheet" />
+<link href="~/Content/plugins/fullcalendar/fullcalendar.css" rel="stylesheet" />
+<link href="~/Content/plugins/autocomplete/chosen.css" rel="stylesheet" />
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>
+            Agenda
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="/Agenda"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Agenda</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+                @if (Model.LogIn.Perfil != "Medico")
+                {
+                    <div class="box box-solid">
+                        <div class="box-header with-border">
+                            <div onclick="eventos()" class="external-event" style="position: relative;">Ver Geral</div><br />
+                            <h4 class="box-title">Legenda</h4>
+                        </div>
+                        <div class="box-body">
+                            @for (int i = 0; i < @Model.ListMedicos.Count(); i++)
+                            {
+                                <div id="external-events">
+                                    <div onclick="eventosmedico(@Model.ListMedicos[i].Id)" class="external-event @Model.ListMedicos[i].Cor" style="position: relative;">@Model.ListMedicos[i].Nome</div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+                <div class="box box-solid">
+                    <div class="box-header with-border">
+                        <h4 class="box-title">Pacientes do dia</h4>
+                    </div>
+                    <div class="box-body">
+                        @for (int i = 0; i < @Model.ListPacientesDia.Count(); i++)
+                        {
+                            <div id="external-events">
+                                <div class="external-event" style="position: relative;">
+                                    <strong>@Model.ListPacientesDia[i].Nome</strong><br />
+                                    <small>Dr(a).: @Model.ListPacientesDia[i].Medico</small><br />
+                                    <small>Horário: @Model.ListPacientesDia[i].DateTimeScheduled.ToShortTimeString()</small><br />
+                                    <small>Título: @Model.ListPacientesDia[i].Title</small><br />
+                                    @if (Model.ListPacientesDia[i].StatusENUM == 1)
+                                    {
+                                        <small style="color:#00c0ef;">
+                                            <em>Paciente esta aguardando</em>
+                                        </small>
+                                    }
+                                    else if (Model.ListPacientesDia[i].StatusENUM == 2)
+                                    {
+                                        <small>
+                                            <em>Paciente atendido</em>
+                                        </small>
+                                    }
+                                    else
+                                    {
+                                        <small style="color:#ff6a00;">
+                                            <em>Paciente ainda não chegou</em>
+                                        </small>
+                                    }
+                                </div>
+                            </div>
+                        }
+                        <input type="hidden" id="hdnIdMedico" value="@Model.LogIn.Id" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+                <div class="container">
+                    <div id='calendar' class="calendario"></div>
+                </div>
+            </div>
+
+            <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Novo agendamento</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form id="EventForm" class="well">
+                                <input type="hidden" id="eventID">
+                                <label>Título</label>
+                                <input type="text" id="eventTitle" class="form-control" required="required" placeholder="Title here"><br />
+                                <label>Data do agendamento</label>
+                                <input type="text" class="form-control" required="required" id="eventDate"><br />
+                                <label>Horário</label>
+                                <input type="text" class="form-control" required="required" id="eventTime"><br />
+                                <label>Tempo do agendamento (Em minutos)</label>
+                                <input type="text" class="form-control" required="required" id="eventDuration" placeholder="15"><br />
+                                <label>Paciente</label>
+                                @Html.DropDownListFor(m => m.PacienteDados.Id, new SelectList(Model.GetPaciente(@Model.LogIn.Clinica), "Chave", "Valor", ""), new { @class = "form-control", @required = "required", @id = "txtPaciente" })
+                                <label>Médico</label>
+                                @Html.DropDownListFor(m => m.LogIn.IdUsuario, new SelectList(Model.GetMedico(@Model.LogIn.Clinica), "Chave", "Valor", ""), new { @class = "form-control chosen-select", @required = "required", @id = "txtMedico" })
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" id="btnPopupCancel" data-dismiss="modal" class="btn">Cancelar</button>
+                            <button type="button" id="btnPopupSave" data-dismiss="modal" class="btn btn-primary">Salvar Agendamento</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="modalAlerta" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Agendamento</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form id="EventForm" class="well">
+                                <div id="lblAgendamento"></div>
+                                <br />
+                                <label>O que voce gostaria de fazer?</label>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" style="float:left;" id="btnVoltar" data-dismiss="modal" class="btn">Voltar</button>
+                            <button type="button" style="float:left;" id="btnDeletar" data-dismiss="modal" class="btn btn-danger">Deletar Agendamento</button>
+                            <button type="button" style="float:left;" id="btnMandarEmail" data-dismiss="modal" class="btn btn-primary">Enviar Email</button>
+                            @if (Model.LogIn.Perfil == "Medico")
+                            {
+                                <button type="button" style="float:left;" id="btnConsulta" data-dismiss="modal" class="btn btn-primary">Iniciar Consulta</button>
+                            }
+                            else
+                            {
+                                <button type="button" style="float:left;" id="btnAguardando" data-dismiss="modal" class="btn btn-primary">Notificar que Paciente está Aguardando</button>
+                            }
+                        </div>
+                        @using (Ajax.BeginForm("Prontuario", "Agenda", new AjaxOptions { HttpMethod = "Post" }, new { id = "formProntuario" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.HiddenFor(x => x.ProntuarioConsulta.IdPaciente, new { @id = "hdnProntuarioId" })
+                        }
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /.row -->
+    </section>
+</div>
+@*<script src="~/js/agendaindexcript.js"></script>*@
+<script src="~/js/agendaindexoriginal.js"></script>
+<script src="~/Content/plugins/jQueryUI/jquery-ui-1.10.3.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js" type="text/javascript"></script>
+<script src="~/Content/plugins/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
+<script src="~/Content/plugins/autocomplete/chosen.jquery.min.js"></script>
+<script src="~/Content/plugins/avgrund/jquery.avgrund.js"></script>

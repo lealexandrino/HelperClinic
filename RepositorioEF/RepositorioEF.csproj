@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ECF48716-F51E-4E65-B5D4-530CF39F54ED}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RepositorioEF</RootNamespace>
+    <AssemblyName>RepositorioEF</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AgendaRepositorioEF.cs" />
+    <Compile Include="ConfiguracaoEF.cs" />
+    <Compile Include="CadastrarGratisEF.cs" />
+    <Compile Include="CadastroRepositorioEF.cs" />
+    <Compile Include="ConsultaRepositorioEF.cs" />
+    <Compile Include="Contexto.cs" />
+    <Compile Include="LogInRepositorioEF.cs" />
+    <Compile Include="Migrations\201507081458142_inicial.cs" />
+    <Compile Include="Migrations\201507081458142_inicial.Designer.cs">
+      <DependentUpon>201507081458142_inicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507162048373_teste.cs" />
+    <Compile Include="Migrations\201507162048373_teste.Designer.cs">
+      <DependentUpon>201507162048373_teste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901041644443_teste2.cs" />
+    <Compile Include="Migrations\201901041644443_teste2.Designer.cs">
+      <DependentUpon>201901041644443_teste2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901050549558_teste3.cs" />
+    <Compile Include="Migrations\201901050549558_teste3.Designer.cs">
+      <DependentUpon>201901050549558_teste3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901050632041_teste4.cs" />
+    <Compile Include="Migrations\201901050632041_teste4.Designer.cs">
+      <DependentUpon>201901050632041_teste4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901092322345_test5.cs" />
+    <Compile Include="Migrations\201901092322345_test5.Designer.cs">
+      <DependentUpon>201901092322345_test5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901092341206_test6.cs" />
+    <Compile Include="Migrations\201901092341206_test6.Designer.cs">
+      <DependentUpon>201901092341206_test6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901100130182_test7.cs" />
+    <Compile Include="Migrations\201901100130182_test7.Designer.cs">
+      <DependentUpon>201901100130182_test7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901282217056_teste8.cs" />
+    <Compile Include="Migrations\201901282217056_teste8.Designer.cs">
+      <DependentUpon>201901282217056_teste8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Mapping\AgendaMap.cs" />
+    <Compile Include="Models\Mapping\LembretesMap.cs" />
+    <Compile Include="Models\Mapping\EmpresaMap.cs" />
+    <Compile Include="Models\Mapping\LogInMap.cs" />
+    <Compile Include="Models\Mapping\PacienteComplementarMap.cs" />
+    <Compile Include="Models\Mapping\PacienteConvenioMap.cs" />
+    <Compile Include="Models\Mapping\PacienteDadosMap.cs" />
+    <Compile Include="Models\Mapping\ProntuarioAnamneseMap.cs" />
+    <Compile Include="Models\Mapping\ProntuarioConsultaMap.cs" />
+    <Compile Include="Models\Mapping\ProntuarioEvolucaoMap.cs" />
+    <Compile Include="Models\Mapping\ProntuarioExameMap.cs" />
+    <Compile Include="Models\Mapping\ProntuarioHipoteseMap.cs" />
+    <Compile Include="PainelRepositorioEF.cs" />
+    <Compile Include="ProntuarioRepositorioEF.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RelatorioRepositorioEF.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dominio\Dominio.csproj">
+      <Project>{1bb5b7eb-3390-4e3f-9182-5294bf0653d4}</Project>
+      <Name>Dominio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201507081458142_inicial.resx">
+      <DependentUpon>201507081458142_inicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507162048373_teste.resx">
+      <DependentUpon>201507162048373_teste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901041644443_teste2.resx">
+      <DependentUpon>201901041644443_teste2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901050549558_teste3.resx">
+      <DependentUpon>201901050549558_teste3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901050632041_teste4.resx">
+      <DependentUpon>201901050632041_teste4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901092322345_test5.resx">
+      <DependentUpon>201901092322345_test5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901092341206_test6.resx">
+      <DependentUpon>201901092341206_test6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901100130182_test7.resx">
+      <DependentUpon>201901100130182_test7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901282217056_teste8.resx">
+      <DependentUpon>201901282217056_teste8.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,322 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Helper Clinic</title>
+    <link rel="icon" type="image/x-icon" href="~/Content/images/helpermini.png">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <meta name="description" content="O Melhor Software Para Clínicas e Consultórios. O Helper Clinic não só é moderno, como também fácil e pratico de se usar." />
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/plugins/siteprincipal/css/core-styles.min.css" rel="stylesheet" />
+    <link href="~/Content/plugins/siteprincipal/css/google-lapis-yanone.css" rel="stylesheet" />
+    <link href="~/Content/plugins/siteprincipal/css/google-lapis.css" rel="stylesheet" />
+    <link href="~/Content/plugins/siteprincipal/css/owl-carousel.min.css" rel="stylesheet" />
+    <link href="~/Content/plugins/alertfy/alertify.core.css" rel="stylesheet" />
+    <link href="~/Content/plugins/alertfy/alertify.default.css" rel="stylesheet" />
+
+    @*<!-- Start of  Zendesk Widget script -->
+    <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=581333ee-1cef-452d-b12a-ee73c627d747"></script>
+    <!-- End of  Zendesk Widget script -->*@
+</head>
+
+<body class="">
+    <header role="banner" class="">
+        <div class="container">
+            <div id="nav-toggle" class="nav-toggle">
+                <span></span>
+            </div>
+            <span id="main-logo" class="logo">
+                <em>H</em>elper <em>C</em>linic
+            </span>
+            <nav role="navigation">
+                <ul>
+                    <li class="">
+                        <a href="#home" data-hover="Home">Home</a>
+                    </li>
+                    <li class="">
+                        <a href="#services" data-hover="Serviços">Serviços</a>
+                    </li>
+                    <li class="">
+                        <a href="#portfolio" data-hover="Compatibilidade">Compatibilidade</a>
+                    </li>
+                    <li class="">
+                        <a href="#skills" data-hover="Preços">Preços</a>
+                    </li>
+                    <li class="">
+                        <a href="#contact" data-hover="Contato">Contato</a>
+                    </li>
+                    @*<li class="">
+                        <a href="/CadastreGratis" style="color:#63B620!important;" data-hover="Cadastre Grátis">Cadastre Grátis</a>
+                    </li>*@
+                    <li class="Current">
+                        <a href="/Login" style="color:#3498db!important;" data-hover="Login">Login</a>
+                    </li>
+                </ul>
+                <div id="nav-overlay" class="nav-overlay">
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main role="main">
+        <section id="home" class="landing">
+            <div class="wrapper">
+                <div class="content">
+                    <img src="~/Content/images/helper.png" />
+                    @*<h2>Helper Clinic</h2>*@
+                    <h1>Clínicas e Consultórios</h1>
+                    <h3>Experimente gratuitamente durante 30 dias.</h3>
+                    <div id="contact-me" style="color: #fbfbfb !important;border: 1px solid #3498D8;background-color: #3498d8;" class="push-button" onclick="location.href='/CadastreGratis'"><span id="spanContact" style="font-weight:bold">Cadastre-se Gratuitamente</span></div>
+                </div>
+            </div>
+        </section>
+        <section id="services" class="main-section services">
+            <div class="container">
+                <div class="main-heading">
+                    <h1>Serviços</h1>
+                    <h3>Um pouco do que nosso software faz pela sua empresa!</h3>
+                    <hr>
+                </div>
+                <div class="service-blocks owl-carousel owl-theme" style="opacity: 1; display: block;">
+                    <div class="owl-wrapper-  outer">
+                        <div class="owl-wrapper" style="left: 0px; display: block; -webkit-transition: all 0ms ease; transition: all 0ms ease;">
+                            <div class="owl-item" style="width: 288px;">
+                                <div class="service-block">
+                                    <div class="inner">
+                                        <i class="fa fa-users"></i><span class="title">Cadastro</span>
+                                        <p class="info">Um jeito fácil e muito simples de cadastrar pacientes, para ajudar no dia a dia da gestão do consultório.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item" style="width: 288px;">
+                                <div class="service-block">
+                                    <div class="inner">
+                                        <i class="fa fa-stethoscope  "></i><span class="title">Prontuário Eletrônico</span>
+                                        <p class="info">Prontuário eletrônico, fácil de usar, e com histórico do paciente detalhado de todas as últimas consultas.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item" style="width: 288px;">
+                                <div class="service-block">
+                                    <div class="inner">
+                                        <i class="fa fa-calendar"></i><span class="title">Agenda</span>
+                                        <p class="info">Agendamento de pacientes, fácil, prático e muito eficiente.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item" style="width: 288px;">
+                                <div class="service-block">
+                                    <div class="inner">
+                                        <i class="fa fa-weixin"></i><span class="title">Mensagem WhattsApp</span>
+                                        <p class="info">Mensagem de Lembrete via WhattsApp um dia antes da consulta, o que ajuda a reduzir drasticamente pacientes que não aparecem em consulta.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="portfolio" class="main-section portfolio">
+            <div class="container">
+                <div class="main-heading dark">
+                    <h1>Compativel com todos os dispositivos</h1>
+                    <h3>Acesse de qualquer lugar</h3>
+                    <h3>Windows, Mac, Android, Linux, Notebooks, Tablets e Smartphones.</h3>
+                    <hr>
+                    <br /><br />
+                    <i class="fa fa-windows fa-3x" style="color:#fff"></i>
+                    <i class="fa fa-apple fa-3x" style="color:#fff; margin-left:15px;"></i>
+                    <i class="fa fa-android fa-3x" style="color: #fff; margin-left: 15px;"></i>
+                    <i class="fa fa-linux fa-3x" style="color: #fff; margin-left: 15px;"></i>
+
+                    <i class="fa fa-laptop fa-3x" style="color: #fff; margin-left: 15px;"></i>
+                    <i class="fa fa-tablet fa-3x" style="color: #fff; margin-left: 15px;"></i>
+                    <i class="fa fa-mobile fa-3x" style="color: #fff; margin-left: 15px;"></i>
+                </div>
+            </div>
+
+
+        </section>
+        <section id="skills" class="main-section skills">
+            <div class="container">
+                <div class="main-heading">
+                    <h1>Preços</h1>
+                    <h3>Sem taxas e sem contrato de fidelidade.</h3>
+                    <hr>
+                </div>
+                <div class="tags">
+                    <div class="pricing-table group">
+                        @*<div class="block basic fl">
+                            <h2 class="title">Plano Basic</h2>
+                            <!-- CONTENT -->
+                            <div class="content">
+                                <p class="price">
+                                    <sup style="margin-left:-20px;">R$</sup>
+                                    <span>19,90</span>
+                                    <sub>/Mês.</sub>
+                                </p>
+                                <p class="hint">2 usuários</p>
+                                <p class="hint">Para demais usuários R$ 9,90 cada</p>
+                            </div>
+                            <!-- /CONTENT -->
+                            <!-- FEATURES -->
+                            <ul class="features">
+                                <li><span class="fa fa-calendar"></span>Agenda</li>
+                                <li><span class="fa fa-users"></span>Cadastro de Pacientes</li>
+                                <li><span class="fa fa-envelope"></span>Envio de Email</li>
+                                <li><span class="fa fa-weixin"></span>Mensagem WhattsApp (R$ 0,20 por Mensagem) - 10 mensagens grátis</li>
+                                <li><span class="fa fa-stethoscope"></span><del>Prontuário Eletrônico</del></li>
+                                <li><span class="fa fa-money"></span><del>Financeiro</del></li>
+                                <li><span class="fa fa-database"></span>Backup sem custo</li>
+                            </ul>
+                            <!-- /FEATURES -->
+                            <!-- PT-FOOTER -->
+                            <div class="pt-footer">
+                                <p>Primeiro mês Grátis</p>
+                            </div>
+                            <!-- /PT-FOOTER -->
+                        </div>*@
+                        <div class="block professional fl">
+                            <h2 class="title">Plano único</h2>
+                            <!-- CONTENT -->
+                            <div class="content">
+                                @*<p style="color: palegoldenrod;"><span class="fa fa-star"></span> Helper Recomenda</p>*@
+                                <p class="price">
+                                    <sup style="margin-left:-20px;">R$</sup>
+                                    <span>49,90</span>
+                                    <sub>/Mês.</sub>
+                                </p>
+                                <p class="hint">2 usuários</p>
+                                <p class="hint">Para demais usuários R$ 9,90 cada</p>
+                            </div>
+                            <!-- /CONTENT -->
+                            <!-- FEATURES -->
+                            <ul class="features">
+                                <li><span class="fa fa-calendar"></span>Agenda</li>
+                                <li><span class="fa fa-users"></span>Cadastro de Pacientes</li>
+                                <li><span class="fa fa-envelope"></span>Envio de Email</li>
+                                <li><span class="fa fa-weixin"></span>Mensagem WhattsApp (R$ 0,20 por Mensagem) - 10 mensagens grátis</li>
+                                <li><span class="fa fa-stethoscope"></span><b>Prontuário Eletrônico</b></li>
+                                <li><span class="fa fa-money"></span><del>Financeiro</del></li>
+                                <li><span class="fa fa-database"></span>Backup sem custo</li>
+                            </ul>
+                            <!-- /FEATURES -->
+                            <!-- PT-FOOTER -->
+                            <div class="pt-footer">
+                                <p>Primeiro mês Grátis</p>
+                            </div>
+                            <!-- /PT-FOOTER -->
+                        </div>
+                        @*<div class="block black fl">
+                            <h2 class="title">Plano Black <small>(em breve)</small></h2>
+                            <!-- CONTENT -->
+                            <div class="content">
+                                <p class="price">
+                                    <sup style="margin-left:-20px;">R$</sup>
+                                    <span>49,90</span>
+                                    <sub>/Mês.</sub>
+                                </p>
+                                <p class="hint">2 usuários</p>
+                                <p class="hint">Para demais usuários R$ 9,90 cada</p>
+                            </div>
+                            <!-- /CONTENT -->
+                            <!-- FEATURES -->
+                            <ul class="features">
+                                <li><span class="fa fa-calendar"></span>Agenda</li>
+                                <li><span class="fa fa-users"></span>Cadastro de Pacientes</li>
+                                <li><span class="fa fa-envelope"></span>Envio de Email</li>
+                                <li><span class="fa fa-weixin"></span>Mensagem WhattsApp (R$ 0,20 por Mensagem) - 10 mensagens grátis</li>
+                                <li><span class="fa fa-stethoscope"></span><b>Prontuário Eletrônico</b></li>
+                                <li><span class="fa fa-money"></span><b>Financeiro</b></li>
+                                <li><span class="fa fa-database"></span>Backup sem custo</li>
+                            </ul>
+                            <!-- /FEATURES -->
+                            <!-- PT-FOOTER -->
+                            <div class="pt-footer">
+                                <p>Em breve - Ainda não está disponível</p>
+                            </div>
+                            <!-- /PT-FOOTER -->
+                        </div>*@
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="main-section contact">
+            <div class="container">
+                <div class="main-heading">
+                    <h1>contato</h1>
+                    <h3>Entre em contato conosco para saber mais ou contratar nossos serviço</h3>
+                    <hr>
+                </div>
+                <div class="contact-form">
+                    <form id="contact-form" action="#">
+                        <div class="top-row">
+                            <input id="contact-name" name="contact-name" placeholder="Nome" />
+                            <input id="contact-email" name="contact-email" placeholder="Email" />
+                            <input id="contact-subject" name="contact-subject" placeholder="Assunto" />
+                        </div>
+                        <textarea id="contact-message" name="contact-message" placeholder="Sua mensagem.."></textarea>
+                        <button id="contact-submit" class="push-button"><span></span></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer role="contentinfo">
+        <div class="container">
+            <span class="left">© 2019 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Helper Clinic</span>
+            @*<span class="left"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Celular (11) 99961-3753 .</span>*@
+            <div class="right" style="margin-right:30px!important;"><a href="http://www.facebook.com/clinicpulse" target="_blank" title="Facebook"><i class="fa fa-facebook-official"></i></a></div>
+        </div>
+    </footer>
+    <div id="back-to-top" class="back-to-top">
+        <i class="fa fa-chevron-up"></i>
+    </div>
+    <input type="hidden" id="forgeryToken" value="@GetAntiForgeryToken()" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+    <script src="~/Content/plugins/siteprincipal/inc/js/plugins/nav.min.js" type="text/javascript"></script>
+    <script src="~/Content/plugins/siteprincipal/inc/js/plugins/scrollto.min.js" type="text/javascript"></script>
+    <script src="~/Content/plugins/siteprincipal/inc/js/plugins/smooth-scroll.min.js" type="text/javascript"></script>
+    <script src="~/Content/plugins/siteprincipal/inc/js/min/core-scripts.min.js" type="text/javascript"></script>
+    <script src="~/Content/plugins/siteprincipal/inc/js/min/functions.min.js" type="text/javascript"></script>
+    <script src="~/Content/plugins/siteprincipal/inc/js/min/plugins.min.js" type="text/javascript"></script>
+    <script src="~/Content/plugins/alertfy/alertify.js"></script>
+    <script>
+        @functions{
+             public string GetAntiForgeryToken()
+             {
+             string cookieToken, formToken;
+             AntiForgery.GetTokens(null, out cookieToken, out formToken);
+             return cookieToken + "," + formToken;
+             }
+         }
+
+        var _0x6e98 = ["\x63\x75\x72\x73\x6F\x72", "\x70\x72\x6F\x67\x72\x65\x73\x73", "\x63\x73\x73", "\x23\x63\x6F\x6E\x74\x61\x63\x74\x2D\x73\x75\x62\x6D\x69\x74", "\x62\x6F\x64\x79", "\x2F\x48\x6F\x6D\x65\x2F\x4D\x61\x6E\x64\x61\x72\x45\x6D\x61\x69\x6C", "\x50\x4F\x53\x54", "\x76\x61\x6C", "\x23\x63\x6F\x6E\x74\x61\x63\x74\x2D\x65\x6D\x61\x69\x6C", "\x23\x63\x6F\x6E\x74\x61\x63\x74\x2D\x73\x75\x62\x6A\x65\x63\x74", "\x23\x63\x6F\x6E\x74\x61\x63\x74\x2D\x6E\x61\x6D\x65", "\x23\x63\x6F\x6E\x74\x61\x63\x74\x2D\x6D\x65\x73\x73\x61\x67\x65", "\x23\x66\x6F\x72\x67\x65\x72\x79\x54\x6F\x6B\x65\x6E", "\x54\x72\x75\x65", "\x45\x6D\x61\x69\x6C\x20\x65\x6E\x76\x69\x61\x64\x6F\x2C\x20\x65\x6E\x74\x72\x61\x72\x65\x6D\x6F\x73\x20\x65\x6D\x20\x63\x6F\x6E\x74\x61\x74\x6F\x20\x6F\x20\x6D\x61\x69\x73\x20\x72\x61\x70\x69\x64\x6F\x20\x70\x6F\x73\x73\x69\x76\x65\x6C", "\x73\x75\x63\x63\x65\x73\x73", "\x4F\x62\x72\x69\x67\x61\x64\x6F\x2E", "\x45\x6D\x61\x69\x6C\x20\x6E\x61\x6F\x20\x65\x6E\x76\x69\x61\x64\x6F\x20\x3D\x28", "\x65\x72\x72\x6F\x72", "\x45\x73\x74\x61\x6D\x6F\x73\x20\x66\x61\x7A\x65\x6E\x64\x6F\x20\x6F\x20\x70\x6F\x73\x73\x69\x76\x65\x6C\x20\x70\x61\x72\x61\x20\x61\x72\x72\x75\x6D\x61\x72\x20\x65\x72\x72\x6F\x73\x20\x65\x20\x6D\x65\x6C\x68\x6F\x72\x20\x61\x74\x65\x6E\x64\xEA\x2D\x6C\x6F", "\x64\x65\x66\x61\x75\x6C\x74", "\x61\x6A\x61\x78", "\x63\x6C\x69\x63\x6B"]; $(_0x6e98[3])[_0x6e98[22]](function () { $(_0x6e98[3])[_0x6e98[2]](_0x6e98[0], _0x6e98[1]); $(_0x6e98[4])[_0x6e98[2]](_0x6e98[0], _0x6e98[1]); $[_0x6e98[21]]({ url: _0x6e98[5], type: _0x6e98[6], data: { email: $(_0x6e98[8])[_0x6e98[7]](), assunto: $(_0x6e98[9])[_0x6e98[7]](), nome: $(_0x6e98[10])[_0x6e98[7]](), body: $(_0x6e98[11])[_0x6e98[7]]() }, headers: { "\x56\x65\x72\x69\x66\x69\x63\x61\x74\x69\x6F\x6E\x54\x6F\x6B\x65\x6E": $(_0x6e98[12])[_0x6e98[7]]() }, success: function (_0xecffx1) { if (_0xecffx1 == _0x6e98[13]) { alertify[_0x6e98[15]](_0x6e98[14]); alertify[_0x6e98[15]](_0x6e98[16]); } else { alertify[_0x6e98[18]](_0x6e98[17]); alertify[_0x6e98[18]](_0x6e98[19]); }; $(_0x6e98[4])[_0x6e98[2]](_0x6e98[0], _0x6e98[20]); $(_0x6e98[3])[_0x6e98[2]](_0x6e98[0], _0x6e98[20]); } }); });
+
+    </script>
+    @*<script>
+        alertify.success('Cadastre por 15 dias gratis. <br />');
+        alertify.success('Sem cartão, sem contrato sem compromisso.');
+        alertify.success('Fácil, rápido e prático.');
+    </script>*@
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-63289707-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

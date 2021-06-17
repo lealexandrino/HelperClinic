@@ -1,0 +1,167 @@
+﻿@model ClinicPulse.Models.ClinicPulseViewModel
+<link href="~/Content/plugins/dentista/estilo.css" rel="stylesheet" media="screen" />
+<link href="~/Content/plugins/dentista/estilo.css" rel="print stylesheet" media="print" />
+
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="" role="tabpanel">
+            <ul id="tabParametros" class="nav nav-tabs bar_tabs" role="tablist">
+
+                <li role="presentation" class="active">
+                    <a href="#tab_anamnese" id="anamnese-tab" role="tab" data-toggle="tab" aria-expanded="true">Anamnese</a>
+                </li>
+                <li role="presentation" class="">
+                    <a href="#tab_exame" id="exame-tab" role="tab" data-toggle="tab" aria-expanded="false">Exame Físico</a>
+                </li>
+                <li role="presentation" class="">
+                    <a href="#tab_odontograma" id="odontograma-tab" role="tab" data-toggle="tab" aria-expanded="false">Odontograma</a>
+                </li>
+                <li role="presentation" class="">
+                    <a href="#tab_hipotese" id="hipotese-tab" role="tab" data-toggle="tab" aria-expanded="false">Hipótese diagnóstica</a>
+                </li>
+                <li role="presentation" class="">
+                    <a href="#tab_evolucao" id="evolucao-tab" role="tab" data-toggle="tab" aria-expanded="false">Evolução</a>
+                </li>
+            </ul>
+            <div id="myTabContent" class="tab-content">
+                <div role="tabpanel" class="tab-pane fade active in" id="tab_anamnese">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            @Html.LabelFor(x => x.ProntuarioAnamnese.Historia)
+                            @Html.TextAreaFor(x => x.ProntuarioAnamnese.Historia, new { @class = "form-control", @rows = "6" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            @Html.LabelFor(x => x.ProntuarioAnamnese.QueixaPrincipal)
+                            @Html.TextBoxFor(x => x.ProntuarioAnamnese.QueixaPrincipal, new { @class = "form-control" })
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            @Html.LabelFor(x => x.ProntuarioAnamnese.ProblemaArticulares)
+                            @Html.TextBoxFor(x => x.ProntuarioAnamnese.ProblemaArticulares, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            @Html.LabelFor(x => x.ProntuarioAnamnese.ProblemaCardiaco)
+                            @Html.TextBoxFor(x => x.ProntuarioAnamnese.ProblemaCardiaco, new { @class = "form-control" })
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            @Html.LabelFor(x => x.ProntuarioAnamnese.ProblemaGastrico)
+                            @Html.TextBoxFor(x => x.ProntuarioAnamnese.ProblemaGastrico, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            @Html.LabelFor(x => x.ProntuarioAnamnese.ProblemaRenais)
+                            @Html.TextBoxFor(x => x.ProntuarioAnamnese.ProblemaRenais, new { @class = "form-control" })
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            @Html.LabelFor(x => x.ProntuarioAnamnese.ProblemaRespiratorio)
+                            @Html.TextBoxFor(x => x.ProntuarioAnamnese.ProblemaRespiratorio, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            @Html.LabelFor(x => x.ProntuarioAnamnese.Alergia)
+                            @Html.TextBoxFor(x => x.ProntuarioAnamnese.Alergia, new { @class = "form-control" })
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            @Html.LabelFor(x => x.ProntuarioAnamnese.UsoMedicamento)
+                            @Html.TextBoxFor(x => x.ProntuarioAnamnese.UsoMedicamento, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            @Html.LabelFor(x => x.ProntuarioAnamnese.Diabetes)
+                            @Html.RadioButtonFor(x => x.ProntuarioAnamnese.Diabetes, true, new { @required = "required" }) Sim
+                            @Html.RadioButtonFor(x => x.ProntuarioAnamnese.Diabetes, false, new { @required = "required" }) Não
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            @Html.LabelFor(x => x.ProntuarioAnamnese.Gravidez)
+                            @Html.RadioButtonFor(x => x.ProntuarioAnamnese.Gravidez, true, new { @required = "required" }) Sim
+                            @Html.RadioButtonFor(x => x.ProntuarioAnamnese.Gravidez, false, new { @required = "required" }) Não
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            @Html.LabelFor(x => x.ProntuarioAnamnese.Hepatite)
+                            @Html.RadioButtonFor(x => x.ProntuarioAnamnese.Hepatite, true, new { @required = "required" }) Sim
+                            @Html.RadioButtonFor(x => x.ProntuarioAnamnese.Hepatite, false, new { @required = "required" }) Não
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            @Html.LabelFor(x => x.ProntuarioAnamnese.Hiv)
+                            @Html.RadioButtonFor(x => x.ProntuarioAnamnese.Hiv, true, new { @required = "required" }) Sim
+                            @Html.RadioButtonFor(x => x.ProntuarioAnamnese.Hiv, false, new { @required = "required" }) Não
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="tab_exame">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            @Html.LabelFor(x => x.ProntuarioExame.Altura)
+                            @Html.TextBoxFor(x => x.ProntuarioExame.Altura, new { @class = "form-control" }) Metros
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            @Html.LabelFor(x => x.ProntuarioExame.Peso)
+                            @Html.TextBoxFor(x => x.ProntuarioExame.Peso, new { @class = "form-control" }) Kilos
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            @Html.LabelFor(x => x.ProntuarioExame.PressaoArterialSistolica)
+                            @Html.TextBoxFor(x => x.ProntuarioExame.PressaoArterialSistolica, new { @class = "form-control" }) mmHg
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            @Html.LabelFor(x => x.ProntuarioExame.PressaoArterialDiastolica)
+                            @Html.TextBoxFor(x => x.ProntuarioExame.PressaoArterialDiastolica, new { @class = "form-control" }) mmHg
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            @Html.LabelFor(x => x.ProntuarioExame.FrequenciaCardiaca)
+                            @Html.TextBoxFor(x => x.ProntuarioExame.FrequenciaCardiaca, new { @class = "form-control" }) Batimentos por minuto
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            @Html.LabelFor(x => x.ProntuarioExame.Obs)
+                            @Html.TextAreaFor(x => x.ProntuarioExame.Obs, new { @class = "form-control", @rows = "6" })
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="tab_odontograma">
+                    @Html.Partial("_Odontograma", Model.ListProntuarioDentista[0])
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="tab_hipotese">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            @Html.LabelFor(x => x.ProntuarioHipotese.Diagnostico)
+                            @Html.TextAreaFor(x => x.ProntuarioHipotese.Diagnostico, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            @Html.LabelFor(x => x.ProntuarioHipotese.Obs)
+                            @Html.TextAreaFor(x => x.ProntuarioHipotese.Obs, new { @class = "form-control", @rows = "6" })
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="tab_evolucao">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            @Html.LabelFor(x => x.ProntuarioEvolucao.Obs)
+                            @Html.TextAreaFor(x => x.ProntuarioEvolucao.Obs, new { @class = "form-control", @rows = "6" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,167 @@
+﻿@model ClinicPulse.Models.formLogin
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Helper Clinic | Cadastro</title>
+    <link rel="icon" type="image/x-icon" href="~/Content/images/helpermini.png">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/plugins/alertfy/alertify.core.css" rel="stylesheet" />
+    <link href="~/Content/plugins/alertfy/alertify.default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/plugins/iCheck/skins/square/blue.css">
+    <link href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/plugins/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition login-page">
+    <div class="login-box" style="margin: 2% auto!important;">
+        <div class="login-logo">
+            <img style="width:200px;" src="~/Content/images/helper.png" /><br />
+            <i style="color:#0d3d5d;">Clinicas e Consultórios</i>
+        </div>
+        <!-- /.login-logo -->
+        <div class="login-box-body">
+            <p class="login-box-msg">Faça seu cadastro e use o sistema por 30 dias gratuitamente</p>
+            <div class='form'>
+                @using (Ajax.BeginForm("CadastrarUsuario", "CadastreGratis", new AjaxOptions { HttpMethod = "Post" }, new { id = "formCadastrarGratis" }))
+                {
+                    @Html.AntiForgeryToken()
+                <div class="form-group has-feedback">
+                    @Html.TextBoxFor(x => x.Nome, new { @id = "divNome", @class = "form-control", @maxlength = "60", @placeholder = "Nome do Usuário", @required = "required" })
+                    <span class="fa fa-user form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    @Html.TextBoxFor(x => x.Telefone, new { @id = "divTelefone", @class = "form-control", @maxlength = "60", @placeholder = "Celular", @required = "required" })
+                    <span class="fa fa-phone form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    @Html.TextBoxFor(x => x.Email, new { @id = "divEmail", @type = "email", @class = "form-control", @maxlength = "60", @placeholder = "exemplo@exemplo.com", @required = "required" })
+                    <span class="fa fa-envelope form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    @Html.PasswordFor(x => x.Senha, new { @id = "divSenha", @class = "form-control", @maxlength = "30", @placeholder = "Digite a sua senha", @required = "required" })
+                    <span class="fa fa-lock form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    @Html.PasswordFor(x => x.Senha, new { @id = "divConfirmarSenha", @class = "form-control", @maxlength = "30", @placeholder = "Digite a sua confirmação da senha", @required = "required" })
+                    <span class="fa fa-lock form-control-feedback"></span>
+                </div>
+                    <label style="color:red; text-align:center; font-size:smaller;">@ViewBag.Mensagem</label>
+
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <label class="" style="font-size:smaller">
+                                <input id="CheckTermos" type="checkbox" name="Check">
+                                Concordo com os <a onclick="TermosdeUso();">termos de uso</a>
+                            </label>
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-xs-4">
+                            <button id="btnCadastrar" type="submit" class="btn btn-primary btn-block btn-flat">Cadastrar</button>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                }
+            </div>
+            <a href="/Login" class="text-center">Já sou cadastrado</a>
+            <!-- /.login-box-body -->
+        </div>
+        <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="~/Content/plugins/jQueryUI/jquery-ui-1.10.3.min.js"></script>
+        <script src="~/Content/plugins/iCheck/icheck.min.js"></script>
+        <script src="~/Content/plugins/alertfy/alertify.js"></script>
+        <script src="~/js/cadastregratisoriginal.js"></script>
+        <script src="~/Content/plugins/input-mask/jquery.mask.js"
+        <script>
+            $(function () {
+                $('#CheckTermos').iCheck({
+                    checkboxClass: 'icheckbox_square-blue',
+                    radioClass: 'iradio_square-blue',
+                    increaseArea: '20%' /* optional */
+                });
+            });
+        </script>
+
+    </div>
+</body>
+</html>
+
+@*<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+        <title>Clinic Pulse</title>
+        <link rel="icon" type="image/x-icon" href="~/Content/images/pulse3.jpg">
+        <link href="../../Content/Login.css" rel="stylesheet" type="text/css" />
+        <link href="~/Content/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
+        <link href="~/Content/plugins/alertfy/alertify.core.css" rel="stylesheet" />
+        <link href="~/Content/plugins/alertfy/alertify.default.css" rel="stylesheet" />
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    </head>
+    <body>
+        <div class='form'>
+            @using (Ajax.BeginForm("CadastrarUsuario", "CadastreGratis", new AjaxOptions { HttpMethod = "Post" }, new { id = "formCadastrarGratis" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content alturaCadastre">
+                            <div class="modal-body">
+                                <br />
+                                <div class="form-group">
+                                    <input id="divNome" type="text" name="LogIn.Nome" class="form-control" required="required" placeholder="Nome">
+                                </div>
+                                <div class="form-group">
+                                    <input id="divEmail" type="email" name="LogIn.Email" class="form-control" required="required" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <input id="divSenha" type="password" name="LogIn.Senha" class="form-control" required="required" placeholder="Senha">
+                                </div>
+                                <div class="form-group">
+                                    <input id="divConfirmarSenha" type="password" name="LogIn.Senha" class="form-control" required="required" placeholder="Confirme a Senha">
+                                </div>
+                                <div class="form-group">
+                                    <input id="divClinica" type="text" name="LogIn.Clinica" class="form-control" required="required" placeholder="Nome da clinica">
+                                </div>
+
+                                <label style="color:red; text-align:center; font-size:smaller;">@Model.Util.Mensagem</label>
+
+                                <div class="form-group">
+                                    <button id="btnCadastrar" class="btn btn-primary btn-lg btn-block botao">Cadastrar</button>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer" style="text-align:center;">
+                                Cadastre Gratis por 15 dias.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <script src="~/Content/plugins/alertfy/alertify.js"></script>
+        <script src="~/js/cadastregratiscript.js"></script>
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-63289707-1', 'auto');
+            ga('send', 'pageview');
+
+        </script>
+    </body>
+    </html>*@

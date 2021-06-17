@@ -1,0 +1,19 @@
+﻿@model ClinicPulse.Models.ClinicPulseViewModel
+@{
+    var webGrid = new WebGrid(canPage: true, defaultSort: "ID", rowsPerPage: 10, ajaxUpdateContainerId: "gridProntuario");
+}
+@{
+    webGrid.Bind(Model.ListPacienteDados, autoSortAndPage: true);
+
+    int index = 0;
+    WebGridColumn[] colunas = new WebGridColumn[3];
+
+    colunas[index++] = webGrid.Column(columnName: "Nome", header: "Nome", style: "centerColumns", format:@<a href="#" onclick="editarUsuario(@(item.Id), '@(item.Nome)')" class="btngrid">@(item.Nome)</a>);
+    colunas[index++] = webGrid.Column(columnName: "TelefoneCelular", header: "Celular", style: "centerColumns");
+    colunas[index++] = webGrid.Column(columnName: "Cpf", header: "Cpf", style: "centerColumns");
+
+    @webGrid.GetHtml(
+    htmlAttributes: new { id = "gridProntuario" },
+    tableStyle: "table table-bordered",
+    columns: webGrid.Columns(colunas));
+}

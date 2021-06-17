@@ -1,0 +1,55 @@
+﻿@model ClinicPulse.Models.ClinicPulseViewModel
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>
+            Painel
+            <small>Dados da semana.</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Painel</a></li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-lg-3 col-xs-6">
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+                        <h3>@Model.DadosPainel.Novos</h3>
+                        <p>Novos Pacientes</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-user-plus"></i>
+                    </div>
+                    <a href="#" class="small-box-footer"><i class="fa fa-user-plus"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xs-6">
+                <div class="small-box bg-green">
+                    <div class="inner">
+                        <h3>@Model.DadosPainel.Velhos</h3>
+                        <p>Pacientes Retorno</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-user"></i>
+                    </div>
+                    <a href="#" class="small-box-footer"><i class="fa fa-user"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="divLembretes">
+            <div class="col-xs-12 col-sm-5 col-md-5">
+                @Html.Partial("_Lembretes")
+            </div>
+            <div class="col-xs-12 col-sm-7 col-md-7">
+                @Html.Partial("_LembretesMensagens")
+            </div>
+        </div>
+    </section>
+</div>
+<script src="~/js/painelindexcript.js"></script>

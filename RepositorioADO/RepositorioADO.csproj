@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CD68EB16-B9CD-4194-A93A-E55F127E6800}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RepositorioADO</RootNamespace>
+    <AssemblyName>RepositorioADO</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CryptSharp">
+      <HintPath>..\CryptSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\GrupoContasDAO.cs" />
+    <Compile Include="DB\ComandosBD.cs" />
+    <Compile Include="DB\ConexaoBD.cs" />
+    <Compile Include="DB\Transacao.cs" />
+    <Compile Include="EnviaEmail.cs" />
+    <Compile Include="Logs.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SQL\Atualizacoes\VersaoFinanceiro\vr 6.0 - Agent Atualiza vencimentos contas.sql" />
+    <Content Include="SQL\Atualizacoes\VersaoFinanceiro\Bancos.sql" />
+    <Content Include="SQL\Atualizacoes\VersaoFinanceiro\vr 6.0 - Cartão de crédito.sql" />
+    <Content Include="SQL\Atualizacoes\VersaoFinanceiro\2 - Categorias contas.sql" />
+    <Content Include="SQL\Atualizacoes\VersaoFinanceiro\3 - Contas bancárias.sql" />
+    <Content Include="SQL\Atualizacoes\VersaoFinanceiro\4 - Contas pagar-receber.sql" />
+    <Content Include="SQL\Atualizacoes\VersaoFinanceiro\vr 6.0 - Convenios.sql" />
+    <Content Include="SQL\Atualizacoes\VersaoFinanceiro\1 - Grupos de contas.sql" />
+    <Content Include="SQL\Atualizacoes\VersaoFinanceiro\vr 6.0 - Mudanças cadastro empresa.sql" />
+    <Content Include="SQL\Originais\AliquotaAtvs.sql" />
+    <Content Include="SQL\Originais\ANPs.sql" />
+    <Content Include="SQL\Originais\Atualiza cotas empresas.sql" />
+    <Content Include="SQL\Originais\Banco.sql" />
+    <Content Include="SQL\Originais\CFOPs.sql" />
+    <Content Include="SQL\Originais\Cidades, Estados e Paises.sql" />
+    <Content Include="SQL\Originais\Constraints.sql" />
+    <Content Include="SQL\Originais\Functions.sql" />
+    <Content Include="SQL\Originais\Limpa sessões usuários.sql" />
+    <Content Include="SQL\Originais\NCMs.sql" />
+    <Content Include="SQL\Originais\Procedure.sql" />
+    <Content Include="SQL\Originais\Recursos.sql" />
+    <Content Include="SQL\Originais\Tabela Aliquotas Estados.sql" />
+    <Content Include="SQL\Originais\Triggers.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dominio\Dominio.csproj">
+      <Project>{1bb5b7eb-3390-4e3f-9182-5294bf0653d4}</Project>
+      <Name>Dominio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

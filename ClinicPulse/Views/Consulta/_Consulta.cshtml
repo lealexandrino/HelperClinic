@@ -1,0 +1,233 @@
+﻿@model ClinicPulse.Models.ClinicPulseViewModel
+@using (Ajax.BeginForm("UpdatePaciente", "Consulta", new AjaxOptions { HttpMethod = "Post" }, new { id = "myForm" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(x => x.PacienteDados.Id)
+    <div id="divGeral">
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-4">
+                <!-- general form elements disabled -->
+                <div class="box box-info">
+                    <div class="box-header">
+                        <h3 class="box-title">Geral</h3>
+                    </div>
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                @Html.LabelFor(x => x.PacienteDados.Nome)
+                                @Html.TextBoxFor(x => x.PacienteDados.Nome, new { @class = "form-control", @placeholder = "Nome ...", @required = "required" })
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                @Html.LabelFor(x => x.PacienteDados.DataNascimento)
+                                @Html.TextBoxFor(x => x.PacienteDados.DataNascimentoS, new { @class = "form-control", @placeholder = "31/03/1988", @id = "txtDataNascimento", @required = "required" })
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                @Html.LabelFor(x => x.PacienteDados.Sexo)
+                                <br />
+                                @Html.RadioButtonFor(x => x.PacienteDados.Sexo, "Masculino", new { @required = "required" }) Masculino
+                                @Html.RadioButtonFor(x => x.PacienteDados.Sexo, "Feminino", new { @required = "required" }) Femino
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                @Html.LabelFor(x => x.PacienteDados.Cpf)
+                                @Html.TextBoxFor(x => x.PacienteDados.Cpf, new { @class = "form-control", @id = "txtCpfCadastro", @required = "required" })
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                @Html.LabelFor(x => x.PacienteDados.PerguntaClinica)
+                                <select name="PacienteDados.PerguntaClinica" class="form-control">
+                                    <option value=""></option>
+                                    <option value="Encaminhamento">Encaminhamento</option>
+                                    <option value="Guia Medico">Guia Médico</option>
+                                    <option value="Hospital">Hospital</option>
+                                    <option value="Internet">Internet</option>
+                                    <option value="Outro">Outro</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                @Html.LabelFor(x => x.PacienteDados.Email)
+                                @Html.TextBoxFor(x => x.PacienteDados.Email, new { @class = "form-control", @placeholder = "@hotmail.com ..." })
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                @Html.LabelFor(x => x.PacienteDados.Obs)
+                                @Html.TextAreaFor(x => x.PacienteDados.Obs, new { @class = "form-control", @placeholder = "Obs ..." })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- left column -->
+            <!-- right column -->
+            <div class="col-md-8">
+                <div class="box box-info">
+                    <div class="box-header">
+                        <h3 class="box-title">Endereço/Contato</h3>
+                    </div>
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                @Html.LabelFor(x => x.PacienteDados.EnderecoCEP)
+                                @Html.TextBoxFor(x => x.PacienteDados.EnderecoCEP, new { @id = "cep", @class = "form-control", @placeholder = "09040-030" })
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-6">
+                                @Html.LabelFor(x => x.PacienteDados.EnderecoRua)
+                                @Html.TextBoxFor(x => x.PacienteDados.EnderecoRua, new { @id = "endereco", @class = "form-control" })
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-2">
+                                @Html.LabelFor(x => x.PacienteDados.EnderecoNumero)
+                                @Html.TextBoxFor(x => x.PacienteDados.EnderecoNumero, new { @class = "form-control" })
+                            </div>
+                            <div class="col-xs-12 col-sm-8 col-md-4">
+                                @Html.LabelFor(x => x.PacienteDados.EnderecoComplemento)
+                                @Html.TextBoxFor(x => x.PacienteDados.EnderecoComplemento, new { @class = "form-control" })
+                            </div>
+                            <div class="col-md-2">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                @Html.LabelFor(x => x.PacienteDados.EnderecoBairro)
+                                @Html.TextBoxFor(x => x.PacienteDados.EnderecoBairro, new { @id = "bairro", @class = "form-control" })
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                @Html.LabelFor(x => x.PacienteDados.EnderecoCidade)
+                                @Html.TextBoxFor(x => x.PacienteDados.EnderecoCidade, new { @id = "cidade", @class = "form-control" })
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                @Html.LabelFor(x => x.PacienteDados.EnderecoEstado)
+                                @Html.TextBoxFor(x => x.PacienteDados.EnderecoEstado, new { @id = "estado", @class = "form-control" })
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                @Html.LabelFor(x => x.PacienteDados.EnderecoPais)
+                                @Html.TextBoxFor(x => x.PacienteDados.EnderecoPais, new { @id = "pais", @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                @Html.LabelFor(x => x.PacienteDados.TelefoneCelular)
+                                @Html.TextBoxFor(x => x.PacienteDados.TelefoneCelular, new { @id = "txtCelular", @class = "form-control", @placeholder = "(11) 99999-9999" })
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-8">
+                                <br />
+                                @Html.CheckBoxFor(x => x.PacienteDados.AceitaSms) Aceita receber sms?
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                @Html.LabelFor(x => x.PacienteDados.TelefoneFixo)
+                                @Html.TextBoxFor(x => x.PacienteDados.TelefoneFixo, new { @id = "txtFixo", @class = "form-control", @placeholder = "(11) 2222-2222" })
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                @Html.LabelFor(x => x.PacienteDados.TelefoneTrabalho)
+                                @Html.TextBoxFor(x => x.PacienteDados.TelefoneTrabalho, new { @id = "txtTelTrabalho", @class = "form-control", @placeholder = "(11) 5555-5555" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- right column -->
+        </div>
+    </div>
+    <div class="row">
+        <div id="divConvenios" class="col-md-4">
+            <!-- general form elements disabled -->
+            <div class="box box-info">
+                <div class="box-header">
+                    <h3 class="box-title">Dados do Convênio</h3>
+                </div>
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6  col-md-6">
+                            @Html.LabelFor(x => x.PacienteConvenio.Convenio)
+                            @Html.TextBoxFor(x => x.PacienteConvenio.Convenio, new { @class = "form-control" })
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            @Html.LabelFor(x => x.PacienteConvenio.Plano)
+                            @Html.TextBoxFor(x => x.PacienteConvenio.Plano, new { @class = "form-control" })
+                        </div>
+                        <div class="col-xs-12 col-sm-4 col-md-6">
+                            @Html.LabelFor(x => x.PacienteConvenio.NumeroCarteirinha)
+                            @Html.TextBoxFor(x => x.PacienteConvenio.NumeroCarteirinha, new { @class = "form-control" })
+                        </div>
+                        <div class="col-xs-12 col-sm-4 col-md-6">
+                            @Html.LabelFor(x => x.PacienteConvenio.Validade)
+                            @Html.TextBoxFor(x => x.PacienteConvenio.ValidadeS, new { @class = "form-control", id = "txtValidacao" })
+                        </div>
+                        <div class="col-xs-12 col-sm-4 col-md-6">
+                            @Html.LabelFor(x => x.PacienteConvenio.Acomodacao)
+                            @Html.TextBoxFor(x => x.PacienteConvenio.Acomodacao, new { @class = "form-control" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="divComplementares" class="col-md-8">
+            <!-- general form elements disabled -->
+            <div class="box box-info">
+                <div class="box-header">
+                    <h3 class="box-title">Dados Complementares</h3>
+                </div>
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            @Html.LabelFor(x => x.PacienteComplementar.Naturalidade)
+                            @Html.TextBoxFor(x => x.PacienteComplementar.Naturalidade, new { @class = "form-control" })
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            @Html.LabelFor(x => x.PacienteComplementar.Nacionalidade)
+                            @Html.TextBoxFor(x => x.PacienteComplementar.Nacionalidade, new { @class = "form-control" })
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            @Html.LabelFor(x => x.PacienteComplementar.EstadoNasceu)
+                            @Html.TextBoxFor(x => x.PacienteComplementar.EstadoNasceu, new { @class = "form-control" })
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            @Html.LabelFor(x => x.PacienteComplementar.Etnia)
+                            <select name="PacienteComplementar.Etnia" class="form-control">
+                                <option value=""></option>
+                                <option value="Amarela">Amarela</option>
+                                <option value="Branca">Branca</option>
+                                <option value="Negra">Negra</option>
+                                <option value="Parda">Parda</option>
+                            </select>
+                        </div>
+                        <div class="col-xs-12 col-sm-4 col-md-4">
+                            @Html.LabelFor(x => x.PacienteComplementar.Rg)
+                            @Html.TextBoxFor(x => x.PacienteComplementar.Rg, new { @class = "form-control" })
+                        </div>
+                        <div class="col-xs-12 col-sm-4 col-md-4">
+                            @Html.LabelFor(x => x.PacienteComplementar.Escolaridade)
+                            @Html.TextBoxFor(x => x.PacienteComplementar.Escolaridade, new { @class = "form-control" })
+                        </div>
+                        <div class="col-xs-12 col-sm-4 col-md-4">
+                            @Html.LabelFor(x => x.PacienteComplementar.EstadoCivil)
+                            @Html.TextBoxFor(x => x.PacienteComplementar.EstadoCivil, new { @class = "form-control" })
+                        </div>
+                        <div class="col-xs-12 col-sm-4 col-md-4">
+                            @Html.LabelFor(x => x.PacienteComplementar.Profissao)
+                            @Html.TextBoxFor(x => x.PacienteComplementar.Profissao, new { @class = "form-control" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-2">
+            <button id="btnSalvarConvenios" class="btn btn-block btn-success">Salvar</button>
+        </div>
+    </div>
+    <input type="hidden" id="hdnCpf" />
+    <input type="hidden" id="hdnEtnia" value="@Model.PacienteComplementar.Etnia" />
+    <input type="hidden" id="hdnPergunta" value="@Model.PacienteDados.PerguntaClinica" />
+}
+<script src="~/js/consultaconsultacript.js"></script>

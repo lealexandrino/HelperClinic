@@ -1,0 +1,151 @@
+﻿@model ClinicPulse.Models.ClinicPulseViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper" style="min-height: 946px;">
+
+    <section class="content-header">
+        <h1>
+            Configurações
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="/Painel"><i class="fa fa-dashboard"></i> Painel</a></li>
+            <li class="active">Configurações</li>
+        </ol>
+    </section>
+
+    @using (Ajax.BeginForm("UpdateEmpresa", "Configuracao", new AjaxOptions { HttpMethod = "Post" }, new { id = "myForm" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(x => x.Empresa.Id)
+        <section class="content">
+            <div id="divGeral">
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-4">
+                        <!-- general form elements disabled -->
+                        <div class="box box-info">
+                            <div class="box-header">
+                                <h3 class="box-title">Dados Cadastrais</h3>
+                            </div>
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        @Html.LabelFor(x => x.Empresa.Nome)
+                                        @Html.TextBoxFor(x => x.Empresa.Nome, new { @class = "form-control", @placeholder = "Nome ...", @required = "required" })
+                                    </div>
+                                    <div class="col-md-6">
+                                        @Html.LabelFor(x => x.Empresa.Clinica)
+                                        @Html.TextBoxFor(x => x.Empresa.Clinica, new { @class = "form-control", @placeholder = "CodeName Clinica ...", @required = "required" })
+                                    </div>
+                                    <div class="col-md-6">
+                                        @Html.LabelFor(x => x.Empresa.CNPJ)
+                                        @Html.TextBoxFor(x => x.Empresa.CNPJ, new { @id = "txtCNPJ", @class = "form-control", @placeholder = "CNPJ ...", @required = "required" })
+                                    </div>
+                                    <div class="col-md-12">
+                                        @Html.LabelFor(x => x.Empresa.ClinicaEmail)
+                                        @Html.TextBoxFor(x => x.Empresa.ClinicaEmail, new { @class = "form-control", @placeholder = "Email ...", @required = "required" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="box box-info">
+                            <div class="box-header">
+                                <h3 class="box-title">Endereço/Contato</h3>
+                            </div>
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6 col-md-3">
+                                        @Html.LabelFor(x => x.Empresa.EnderecoCEP)
+                                        @Html.TextBoxFor(x => x.Empresa.EnderecoCEP, new { @id = "cep", @class = "form-control", @placeholder = "09040-030" })
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-6">
+                                        @Html.LabelFor(x => x.Empresa.EnderecoRua)
+                                        @Html.TextBoxFor(x => x.Empresa.EnderecoRua, new { @id = "endereco", @class = "form-control" })
+                                    </div>
+                                    <div class="col-xs-12 col-sm-4 col-md-2">
+                                        @Html.LabelFor(x => x.Empresa.EnderecoNumero)
+                                        @Html.TextBoxFor(x => x.Empresa.EnderecoNumero, new { @class = "form-control" })
+                                    </div>
+                                    <div class="col-xs-12 col-sm-8 col-md-4">
+                                        @Html.LabelFor(x => x.Empresa.EnderecoComplemento)
+                                        @Html.TextBoxFor(x => x.Empresa.EnderecoComplemento, new { @class = "form-control" })
+                                    </div>
+                                    <div class="col-md-2">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6 col-md-3">
+                                        @Html.LabelFor(x => x.Empresa.EnderecoBairro)
+                                        @Html.TextBoxFor(x => x.Empresa.EnderecoBairro, new { @id = "bairro", @class = "form-control" })
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-3">
+                                        @Html.LabelFor(x => x.Empresa.EnderecoCidade)
+                                        @Html.TextBoxFor(x => x.Empresa.EnderecoCidade, new { @id = "cidade", @class = "form-control" })
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-3">
+                                        @Html.LabelFor(x => x.Empresa.EnderecoEstado)
+                                        @Html.TextBoxFor(x => x.Empresa.EnderecoEstado, new { @id = "estado", @class = "form-control" })
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-3">
+                                        @Html.LabelFor(x => x.Empresa.EnderecoPais)
+                                        @Html.TextBoxFor(x => x.Empresa.EnderecoPais, new { @id = "pais", @class = "form-control" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <!-- general form elements disabled -->
+                        <div class="box box-info">
+                            <div class="box-header">
+                                <h3 class="box-title">Mensagem WhatsApp <i class="fa fa-whatsapp"></i></h3>
+                            </div>
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-md-12" style="text-align:center;">
+                                        <div class="callout callout-info" style="margin-bottom: 0!important;">
+                                            <h4><i class="fa fa-info"></i> Nota:</h4>
+                                            Para o envio de mensagens via WhatsApp deverá ter esta com o WhatsWeb da empresa aberto no navegador, para que assim o sistema possa redirecionar a mesagem do lembrete diretamente de sua conta do WhatsApp.
+                                            <br />
+                                            Para o envio de mensagens via SMS deverá conter créditos contratados no sistema, pondendo ser enviado individualmente para aqueles que não possuem WhatsApp, ou para poupar tempo pode enviar para todos dos lembretes diários.
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3" style="text-align:center;">
+                                        @Html.LabelFor(x => x.Empresa.QtdeMensagemRestante)
+                                        <br />
+                                        <label style="font-size:50px;">@Model.Empresa.QtdeMensagemRestante</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        @Html.LabelFor(x => x.Empresa.MensagemWhatsApp)
+                                        @Html.TextAreaFor(x => x.Empresa.MensagemWhatsApp, new { @class = "form-control", @placeholder = "Mensagem final do lembrete sem a informação da data e horario, pois o sistema inputará automaticamente após a mensagem ... Por exemplo: Tenha um ótimo feriado, Feliz Natal e etc..." })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-2">
+                    <button id="btnSalvarConfiguracao" class="btn btn-block btn-success">Salvar</button>
+                </div>
+            </div>
+        </section>
+    }
+</div>
+<script src="~/js/configuracaoindexoriginal.js"></script>
+<script>
+    $("myForm").submit(function () {
+        $(this).submit(function () {
+            return false;
+        });
+        return true;
+    });
+</script>
